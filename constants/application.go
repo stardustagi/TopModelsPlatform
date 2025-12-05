@@ -7,7 +7,7 @@ import (
 
 var (
 	ApplicationName   = "TopModelsPlatform"
-	ApplicationPrefix = "node"
+	ApplicationPrefix = "platform"
 )
 
 var (
@@ -20,7 +20,8 @@ var (
 )
 
 var (
-	HeaderId string = "id"
+	HeaderId  string = "id"
+	JwtSecret string
 )
 
 var (

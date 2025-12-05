@@ -6,13 +6,10 @@ import (
 
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
-	"github.com/stardustagi/TopLib/codec"
 	"github.com/stardustagi/TopLib/libs/logs"
 	"github.com/stardustagi/TopLib/libs/server"
-	"github.com/stardustagi/TopLib/libs/uuid"
 	"github.com/stardustagi/TopLib/utils"
-	"github.com/stardustagi/TopModelsPlatform/protocol/requests"
-	"github.com/stardustagi/TopModelsPlatform/protocol/responses"
+	echoSwagger "github.com/swaggo/echo-swagger"
 	"go.uber.org/zap"
 )
 
@@ -36,7 +33,7 @@ func NewApplication(configBytes, wsConfigBytes []byte) *Application {
 		panic(err)
 	}
 	b, err := server.NewBackend(configBytes)
-	return &Application{
+	app := &Application{
 		ctx:      context.Background(),
 		config:   config,
 		wsConfig: wsConfig,
@@ -46,11 +43,14 @@ func NewApplication(configBytes, wsConfigBytes []byte) *Application {
 			ReadBufferSize:  wsConfig.ReadBufferSize,
 			WriteBufferSize: wsConfig.WriteBufferSize,
 			CheckOrigin: func(r *http.Request) bool {
-				return true // Allow all origins for simplicity
+				return true
 			},
 		},
 		b: b,
 	}
+	// 注册 swagger 路由
+	app.b.AddNativeHandler("GET", "/swagger/*", echoSwagger.WrapHandler)
+	return app
 }
 
 func (h *Application) Start() {
@@ -81,36 +81,4 @@ func (h *Application) AddNativeHandler(method, path string, handler echo.Handler
 }
 
 func (h *Application) HandleWebSocket() {
-	//ws := server.NewHandler(
-	//	"ws",
-	//	[]string{"websocket"},
-	//	func(ctx echo.Context, req requests.DefaultWsRequest, resp responses.DefaultWsResponse) error {
-	//		conn, err := h.upgrader.Upgrade(ctx.Response(), ctx.Request(), nil)
-	//		if err != nil {
-	//			return err
-	//		}
-	//		userId := ctx.Request().Header.Get("User-Id")
-	//		if userId == "" {
-	//			return echo.NewHTTPError(http.StatusUnauthorized, "User ID is required")
-	//		}
-	//		sessionId := uuid.GetUuidString()
-	//		logger := logs.GetLogger("websocketClient")
-	//		handler := wshandler.NewLLMModelServiceHandler()
-	//		client := server.NewClient(
-	//			userId,
-	//			sessionId,
-	//			conn,
-	//			codec.NewJsonCodec(),
-	//			logger,
-	//			ctx.Request().Context(),
-	//			handler,
-	//			h.manager,
-	//		)
-	//		h.manager.RegisterClient(client)
-	//		go client.Listen()
-	//		return nil
-	//	},
-	//)
-	//h.b.AddHandler("GET", "/ws", ws)
-	//h.logger.Info("WebSocket handler registered")
 }

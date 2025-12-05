@@ -2,7 +2,6 @@ package backend
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"strconv"
 
@@ -22,8 +21,8 @@ func PlatformUserAccess() echo.MiddlewareFunc {
 		return func(c echo.Context) error {
 			//在这里处理拦截请求的逻辑
 			jwtstr := c.Request().Header.Get("jwt")
-			nodeUserId := c.Request().Header.Get("id")
-			secret := fmt.Sprintf("%s-%s-%s", constants.AppName, constants.AppVersion, nodeUserId)
+			UserId := c.Request().Header.Get("id")
+			secret := fmt.Sprintf("%s-%s-%s", constants.AppName, constants.AppVersion, UserId)
 			if jwtstr != "" {
 				jwtobj, ok := jwt.JWTDecrypt(jwtstr, secret)
 				if !ok || jwtobj == nil || jwtobj["token"] == nil || jwtobj["id"] == nil {

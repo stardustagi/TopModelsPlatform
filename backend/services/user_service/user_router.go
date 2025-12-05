@@ -1,0 +1,48 @@
+package user_service
+
+import (
+	"github.com/stardustagi/TopLib/libs/server"
+	"github.com/stardustagi/TopModelsPlatform/backend"
+	"github.com/stardustagi/TopModelsPlatform/protocol/requests"
+	"github.com/stardustagi/TopModelsPlatform/protocol/responses"
+)
+
+func (u *UserHttpService) initialization() {
+	u.app.AddGroup("user", backend.PlatformUserAccess(), server.Request())
+
+	u.app.AddGetHandler("user", server.NewHandler(
+		"list",
+		[]string{"User"},
+		u.List,
+	))
+
+	u.app.AddGetHandler("user", server.NewHandler[requests.UserIdReq, responses.DefaultResponse](
+		"get",
+		[]string{"User"},
+		u.GetById,
+	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.CreateUserReq, responses.DefaultResponse](
+		"create",
+		[]string{"User"},
+		u.Create,
+	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.UpdateUserReq, responses.DefaultResponse](
+		"update",
+		[]string{"User"},
+		u.Update,
+	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.UserIdReq, responses.DefaultResponse](
+		"delete",
+		[]string{"User"},
+		u.Delete,
+	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.SetActiveReq, responses.DefaultResponse](
+		"setActive",
+		[]string{"User"},
+		u.SetActive,
+	))
+}
