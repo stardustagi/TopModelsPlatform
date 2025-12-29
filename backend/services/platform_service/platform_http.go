@@ -53,7 +53,7 @@ func NewPlatformHttpService() *PlatfromHttpService {
 		dao:       databases.GetDao(),
 		rds: redis.NewRedisView(redis.GetRedisDb(),
 			constants.ApplicationPrefix,
-			logs.GetLogger("NodeUserRedis")),
+			logs.GetLogger("PlatformRedis")),
 	}
 }
 

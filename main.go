@@ -55,9 +55,11 @@ func main() {
 	logger.Info("Node bill service started")
 
 	app.Start()
-
 	// 停止服务
+	app.Stop()
 	platformService.Stop()
 	userService.Stop()
-	app.Stop()
+	report.Stop()
+	billConfigService.Stop()
+	logger.Info("Services stopped")
 }

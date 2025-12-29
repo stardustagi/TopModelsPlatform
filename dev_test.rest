@@ -1,0 +1,5 @@
+### graphcode
+POST http://127.0.0.1:8082/api/platform/graphCode
+Content-Type: application/json
+
+{"t":"1766996324"}
