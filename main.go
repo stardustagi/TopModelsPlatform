@@ -6,8 +6,10 @@ import (
 	"github.com/stardustagi/TopLib/libs/logs"
 	"github.com/stardustagi/TopLib/libs/redis"
 	"github.com/stardustagi/TopModelsPlatform/backend"
-	platform "github.com/stardustagi/TopModelsPlatform/backend/services/platform_service"
-	user_service "github.com/stardustagi/TopModelsPlatform/backend/services/user_service"
+	"github.com/stardustagi/TopModelsPlatform/backend/services/node_bill"
+	"github.com/stardustagi/TopModelsPlatform/backend/services/node_report"
+	"github.com/stardustagi/TopModelsPlatform/backend/services/platform_service"
+	"github.com/stardustagi/TopModelsPlatform/backend/services/user_service"
 	"github.com/stardustagi/TopModelsPlatform/constants"
 
 	_ "github.com/stardustagi/TopModelsPlatform/docs"
@@ -41,6 +43,16 @@ func main() {
 	userService := user_service.GetUserHttpServiceInstance()
 	userService.Start(app)
 	logger.Info("User service started")
+
+	// 启动报表服务
+	report := node_report.GetNodeHttpReportServiceInstance()
+	report.Start(app)
+	logger.Info("Node report service started")
+
+	// 启动计费配置服务
+	billConfigService := node_bill.GetNodeHttpBillServiceInstance()
+	billConfigService.Start(app)
+	logger.Info("Node bill service started")
 
 	app.Start()
 

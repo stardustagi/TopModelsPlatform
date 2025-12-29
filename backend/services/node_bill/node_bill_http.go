@@ -7,8 +7,8 @@ import (
 	"github.com/stardustagi/TopLib/libs/databases"
 	"github.com/stardustagi/TopLib/libs/logs"
 	"github.com/stardustagi/TopLib/libs/redis"
-	"github.com/stardustagi/TopModelsNode/backend"
-	"github.com/stardustagi/TopModelsNode/constants"
+	"github.com/stardustagi/TopModelsPlatform/backend"
+	"github.com/stardustagi/TopModelsPlatform/constants"
 	"go.uber.org/zap"
 )
 
@@ -44,7 +44,7 @@ func NewNodeHttpBillService() *NodeHttpBillService {
 		cancelCtx: cancel,
 		dao:       databases.GetDao(),
 		rds: redis.NewRedisView(redis.GetRedisDb(),
-			constants.NodeKeyPrefix,
+			constants.PlatformPrefix,
 			logs.GetLogger("NodeBillRedis")),
 	}
 }
