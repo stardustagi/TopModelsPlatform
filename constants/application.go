@@ -17,8 +17,8 @@ var (
 	MailDefaultPassword  string = "ajZxPKxauQaHOtpBJF6W"
 	ObtenationIterations int    = 3
 	CodeKeyExpire        int    = 30
-	UserGraphCodeExpire  string = "300" // 图形验证码过期时间（秒）
-	UserPhoneCodeExpire  int    = 300   // 手机验证码过期时间（秒）
+	UserGraphCodeExpire  string = "300s" // 图形验证码过期时间（秒）
+	UserPhoneCodeExpire  string = "300s" // 手机验证码过期时间（秒）
 	PlatformPrefix       string = fmt.Sprintf("%s:platform", RedisPrefix)
 )
 
@@ -49,7 +49,7 @@ func PlatformUserJwtKey(id int64) string {
 }
 
 func PlatformUserGraphVerifyKey(t string) string {
-	return fmt.Sprintf("nodeUserGraphVerifyCode:%s", t)
+	return fmt.Sprintf("platformUserGraphVerifyCode:%s", t)
 }
 
 func PlatformUserPhoneVerifyKey(phone string) string {

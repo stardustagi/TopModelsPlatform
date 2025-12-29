@@ -7,6 +7,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/stardustagi/TopLib/libs/redis"
+	"github.com/stardustagi/TopLib/libs/uuid"
 	"github.com/stardustagi/TopLib/protocol"
 	"github.com/stardustagi/TopModelsPlatform/constants"
 	"github.com/stardustagi/TopModelsPlatform/protocol/requests"
@@ -126,10 +127,10 @@ func (p *PlatfromHttpService) GetPhoneCode(c echo.Context,
 // GetGraphVerifyCodeKey 生成图形验证码并存储到Redis
 func (p *PlatfromHttpService) GetGraphVerifyCodeKey(t string) (string, error) {
 	// 生成6位数字验证码
-	code := fmt.Sprintf("%06d", p.generateRandomCode())
+	code := uuid.GenNumberString(6)
 	key := constants.PlatformUserGraphVerifyKey(t)
 
-	err := p.rds.Set(p.ctx, key, []byte(code), fmt.Sprintf("%d", constants.UserPhoneCodeExpire))
+	err := p.rds.Set(p.ctx, key, []byte(code), constants.UserPhoneCodeExpire)
 	if err != nil {
 		return "", err
 	}
@@ -152,7 +153,7 @@ func (p *PlatfromHttpService) generatePhoneVerifyCode(phone, graphCode, t string
 	code := fmt.Sprintf("%06d", p.generateRandomCode())
 	phoneKey := constants.PlatformUserPhoneVerifyKey(phone)
 
-	err = p.rds.Set(p.ctx, phoneKey, []byte(code), fmt.Sprintf("%d", constants.UserPhoneCodeExpire))
+	err = p.rds.Set(p.ctx, phoneKey, []byte(code), constants.UserPhoneCodeExpire)
 	if err != nil {
 		return "", err
 	}
