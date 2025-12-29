@@ -49,6 +49,11 @@ type UserRebateData struct {
 	Status        int    `json:"status" xorm:"'status' INT(10) default 0"`                    // 0未返点 1已返点
 
 }
+
+type GetUserRebateConfigResp struct {
+	RebateInfoList []models.UserRebateConfig `json:"rebate_info_list"`
+}
+
 type GetUserRebateInfoResp struct {
 	Data  []UserRebateData `json:"data"`
 	Total int              `json:"total"`

@@ -58,6 +58,10 @@ type UpdateUserRebateConfigReq struct {
 	Status     int   `json:"status" validate:"oneof=0 1"`
 }
 
+type GetUserRebateConfigReq struct {
+	UserId int64 `json:"user_id" validate:"required,gt=0"`
+}
+
 type GetUserRebateInfoReq struct {
 	PageInfo PageReq `json:"page_info"`
 	UserId   int64   `json:"user_id" validate:"required,gt=0"`

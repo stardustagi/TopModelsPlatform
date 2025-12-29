@@ -67,6 +67,12 @@ func (u *UserHttpService) initialization() {
 		[]string{"user", "rebate"},
 		u.UpdateUserRebateConfig,
 	))
+	u.app.AddPostHandler("user", server.NewHandler(
+		"getUserRebateConfigList",
+		[]string{"user", "rebateConfig"},
+		u.GetUserRebateConfigList,
+	))
+
 	u.app.AddPostHandler("user", server.NewHandler[requests.GetUserRebateInfoReq, responses.GetUserRebateInfoResp](
 		"getUserRebateInfo",
 		[]string{"user", "rebate"},

@@ -3,3 +3,60 @@ POST http://127.0.0.1:8082/api/platform/graphCode
 Content-Type: application/json
 
 {"t":"1766996324"}
+
+
+### create user
+POST http://127.0.0.1:8082/api/user/create
+Content-Type: application/json
+
+
+{"user_name":"testuser11","password":"TestPass123!","email":"jxncyjq@163.com",
+  "phone": "13838389438"}
+
+### create platform user
+POST http://127.0.0.1:8082/api/platform/register
+Content-Type: application/json
+
+{
+  "mail": "jxncyjq@163.com"  ,
+  "password": "123123"
+}
+
+
+### login platform user
+POST http://127.0.0.1:8082/api/platform/login
+Content-Type: application/json
+
+{
+"mail":"jxncyjq@163.com","password":"123123"}
+
+### rebaet
+POST http://127.0.0.1:8082/api/user/createUserRebateConfig
+Content-Type: application/json
+jwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ik9PTkg3NTRzNXY1UWVzRUtITXc4ZWljYW9UNFl4SDRyIiwiaXNzIjoiYWRtaW4ifQ.subXBI1BkMYrw3sP78J1rvr5ymaLpYeSlQUOGkgSdng
+id: 1
+
+{"id":0,"user_id":1,"tier_start":10,"tier_end":-1,"rebate_rate":20,"status":1}
+
+### get user rebate config
+POST http://127.0.0.1:8082/api/user/getUserRebateConfigList
+Content-Type: application/json
+jwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ik9PTkg3NTRzNXY1UWVzRUtITXc4ZWljYW9UNFl4SDRyIiwiaXNzIjoiYWRtaW4ifQ.subXBI1BkMYrw3sP78J1rvr5ymaLpYeSlQUOGkgSdng
+id: 1
+
+{"user_id": 1}
+
+### get user rebate info
+POST http://127.0.0.1:8082/api/user/getUserRebateInfo
+Content-Type: application/json
+jwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ik9PTkg3NTRzNXY1UWVzRUtITXc4ZWljYW9UNFl4SDRyIiwiaXNzIjoiYWRtaW4ifQ.subXBI1BkMYrw3sP78J1rvr5ymaLpYeSlQUOGkgSdng
+id: 1
+
+{
+  "page_info": {
+    "page": 1,
+    "page_size": 10,
+    "order": "id desc"
+  },
+ "user_id" : 1
+}

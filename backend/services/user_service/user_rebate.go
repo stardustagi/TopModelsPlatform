@@ -202,6 +202,38 @@ func (u *UserHttpService) UpdateUserRebateConfig(ctx echo.Context,
 	})
 }
 
+// GetUserRebateConfigList 获取用户返利配置列表
+// @Summary 获取用户返利配置列表
+// @Description 获取用户消费返点阶梯配置列表
+// @Tags User
+// @Accept json
+// @Produce json
+// @Param request body requests.GetUserRebateConfigReq true "获取返利配置列表请求"
+// @Success 200 {object} responses.GetUserRebateConfigResp
+// @Router /user/getUserRebateConfigList [post]
+func (u *UserHttpService) GetUserRebateConfigList(ctx echo.Context,
+	req requests.GetUserRebateConfigReq,
+	resp responses.GetUserRebateConfigResp) error {
+	u.logger.Info("获取用户返利配置列表",
+		zap.Int64("userId", req.UserId))
+
+	session := u.dao.NewSession()
+	defer session.Close()
+
+	var configs []models.UserRebateConfig
+	err := session.Native().
+		Where("user_id = ?", req.UserId).
+		Find(&configs)
+	if err != nil {
+		u.logger.Error("查询用户返利配置失败", zap.Error(err))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+
+	resp.RebateInfoList = configs
+	// 转换为响应数据
+	return protocol.Response(ctx, nil, resp)
+}
+
 // GetUserRebateInfo 获取用户返利信息
 // @Summary 获取用户返利信息
 // @Description 获取用户月度返点记录，UserId为0时查询所有记录
