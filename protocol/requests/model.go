@@ -26,4 +26,5 @@ type UpdateModelReq struct {
 	OutputPrice int    `json:"output_price"`
 	Status      string `json:"status"`
 	Address     string `json:"address"`
+	ApiStyles   string `json:"api_styles"`
 }
