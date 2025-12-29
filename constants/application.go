@@ -17,6 +17,7 @@ var (
 	MailDefaultPassword  string = "ajZxPKxauQaHOtpBJF6W"
 	ObtenationIterations int    = 3
 	CodeKeyExpire        int    = 30
+	PlatformPrefix       string = fmt.Sprintf("%s:platform", RedisPrefix)
 )
 
 var (

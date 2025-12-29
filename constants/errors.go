@@ -14,6 +14,7 @@ var (
 	ErrAuthFailed        = topError.New("认证失败", 1005)
 	ErrInvalidPassword   = topError.New("密码错误", 1006)
 	ErrUserNotActive     = topError.New("用户未激活", 1007)
+	ErrNotDataSet        = topError.New("Not data set", 1005)
 
 	// 模型相关错误
 	ErrModelNotFound      = topError.New("模型不存在", 2001)
