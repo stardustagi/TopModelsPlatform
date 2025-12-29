@@ -72,4 +72,9 @@ func (u *UserHttpService) initialization() {
 		[]string{"user", "rebate"},
 		u.GetUserRebateInfo,
 	))
+	u.app.AddPostHandler("user", server.NewHandler[requests.GetModelsProviderInfoListReq, responses.GetModelsProviderInfoListResp](
+		"getModelsProviderInfoListResp",
+		[]string{"user", "modelProviderInfo"},
+		u.GetModelsProviderInfoList,
+	))
 }

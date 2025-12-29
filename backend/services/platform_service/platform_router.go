@@ -31,12 +31,12 @@ func (p *PlatfromHttpService) initialization() {
 
 	// 模型管理路由 - 需要认证
 	p.app.AddGroup("model", backend.PlatformUserAccess(), server.Request())
-	p.app.AddGetHandler("model", server.NewHandler[requests.PageReq, responses.DefaultResponse](
+	p.app.AddPostHandler("model", server.NewHandler[requests.PageReq, responses.DefaultResponse](
 		"list",
 		[]string{"Model"},
 		p.ListModels,
 	))
-	p.app.AddGetHandler("model", server.NewHandler[requests.ModelIdReq, responses.DefaultResponse](
+	p.app.AddPostHandler("model", server.NewHandler[requests.ModelIdReq, responses.DefaultResponse](
 		"get",
 		[]string{"Model"},
 		p.GetModel,

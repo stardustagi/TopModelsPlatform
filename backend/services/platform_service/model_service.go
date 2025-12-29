@@ -35,6 +35,9 @@ func (p *PlatfromHttpService) ListModels(c echo.Context, req requests.PageReq, r
 	if req.Limit > 100 {
 		req.Limit = 100
 	}
+	if req.Sort == "" {
+		req.Sort = "id DESC"
+	}
 
 	var modelsList []models.ModelsInfo
 	pageable := databases.NewPageable(req.Skip, req.Limit, req.Sort)

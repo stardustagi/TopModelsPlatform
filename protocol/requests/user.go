@@ -46,3 +46,7 @@ type UserAdminPaymentReq struct {
 	Amount   int64  `json:"amount" validate:"required,gt=0"`
 	Reason   string `json:"reason" validate:"required"`
 }
+
+type GetModelsProviderInfoListReq struct {
+	ProviderName string `json:"provider_name"`
+}
