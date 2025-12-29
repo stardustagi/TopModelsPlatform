@@ -6,9 +6,11 @@ import (
 
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
+	"github.com/stardustagi/TopLib/libs/databases"
 	"github.com/stardustagi/TopLib/libs/logs"
 	"github.com/stardustagi/TopLib/libs/server"
 	"github.com/stardustagi/TopLib/utils"
+	"github.com/stardustagi/TopModelsPlatform/models"
 	echoSwagger "github.com/swaggo/echo-swagger"
 	"go.uber.org/zap"
 )
@@ -54,8 +56,13 @@ func NewApplication(configBytes, wsConfigBytes []byte) *Application {
 }
 
 func (h *Application) Start() {
+	h.syncDatabaseSchema()
 	go h.manager.Start()
-	go h.b.Start()
+	go func() {
+		if err := h.b.Start(); err != nil {
+			h.logger.Error("backend.Start error", zap.Error(err))
+		}
+	}()
 }
 
 func (h *Application) Stop() {
@@ -81,4 +88,17 @@ func (h *Application) AddNativeHandler(method, path string, handler echo.Handler
 }
 
 func (h *Application) HandleWebSocket() {
+}
+
+func (h *Application) syncDatabaseSchema() {
+	h.logger.Info("Syncing database schema...")
+	modelList := []interface{}{
+		&models.PlatformUsers{},
+	}
+	dbDao := databases.GetDao()
+	if err := dbDao.Native().Sync2(modelList...); err != nil {
+		h.logger.Error("Database schema sync failed", zap.Error(err))
+		panic("Database schema sync failed: " + err.Error())
+	}
+	h.logger.Info("Database schema synced successfully")
 }
