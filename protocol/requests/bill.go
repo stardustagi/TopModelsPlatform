@@ -40,3 +40,25 @@ type GetModelDiscountByModelIdReq struct {
 	ModelId         int64 `json:"model_id" validate:"required"`
 	ModelProviderId int64 `json:"model_provider_id"`
 }
+
+type CreateUserRebateConfigReq struct {
+	UserId     int64 `json:"user_id" validate:"required,gt=0"`
+	TierStart  int64 `json:"tier_start" validate:"gte=0"`
+	TierEnd    int64 `json:"tier_end" validate:"required,gtefield=TierStart|eq=-1"`
+	RebateRate int   `json:"rebate_rate" validate:"required,gte=0,lte=100"`
+	Status     int   `json:"status" validate:"oneof=0 1"`
+}
+
+type UpdateUserRebateConfigReq struct {
+	Id         int64 `json:"id" validate:"required,gt=0"`
+	UserId     int64 `json:"user_id" validate:"required,gt=0"`
+	TierStart  int64 `json:"tier_start" validate:"gte=0"`
+	TierEnd    int64 `json:"tier_end" validate:"required,gtefield=TierStart|eq=-1"`
+	RebateRate int   `json:"rebate_rate" validate:"required,gte=0,lte=100"`
+	Status     int   `json:"status" validate:"oneof=0 1"`
+}
+
+type GetUserRebateInfoReq struct {
+	PageInfo PageReq `json:"page_info"`
+	UserId   int64   `json:"user_id" validate:"required,gt=0"`
+}

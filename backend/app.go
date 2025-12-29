@@ -94,6 +94,10 @@ func (h *Application) syncDatabaseSchema() {
 	h.logger.Info("Syncing database schema...")
 	modelList := []interface{}{
 		&models.PlatformUsers{},
+		&models.ProviderConsumeSummary{},
+		&models.ProviderModelDailySummary{},
+		&models.UserRebateConfig{},
+		&models.UserRebateMonthly{},
 	}
 	dbDao := databases.GetDao()
 	if err := dbDao.Native().Sync2(modelList...); err != nil {
