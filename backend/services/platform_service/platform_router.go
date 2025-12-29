@@ -56,4 +56,13 @@ func (p *PlatfromHttpService) initialization() {
 		[]string{"Model"},
 		p.DeleteModel,
 	))
+	p.app.AddPostHandler("platform", server.NewHandler(
+		"graphCode",
+		[]string{"graphCode"},
+		p.GetGraphCode))
+
+	p.app.AddPostHandler("platform", server.NewHandler(
+		"phoneCode",
+		[]string{"phoneCode"},
+		p.GetPhoneCode))
 }

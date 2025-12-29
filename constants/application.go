@@ -17,6 +17,8 @@ var (
 	MailDefaultPassword  string = "ajZxPKxauQaHOtpBJF6W"
 	ObtenationIterations int    = 3
 	CodeKeyExpire        int    = 30
+	UserGraphCodeExpire  string = "300" // 图形验证码过期时间（秒）
+	UserPhoneCodeExpire  int    = 300   // 手机验证码过期时间（秒）
 	PlatformPrefix       string = fmt.Sprintf("%s:platform", RedisPrefix)
 )
 

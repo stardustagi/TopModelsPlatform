@@ -2,6 +2,8 @@ package user_service
 
 import (
 	"context"
+	"fmt"
+	"strconv"
 	"sync"
 	"time"
 
@@ -295,4 +297,198 @@ func (u *UserHttpService) SetActive(c echo.Context, req requests.SetActiveReq, r
 	}
 
 	return protocol.Response(c, nil, nil)
+}
+
+// AdminAddUserByName 管理员添加用户
+// @Summary 管理员添加用户
+// @Description 管理员使用用户名添加用户
+// @Tags User
+// @Accept json
+// @Produce json
+// @Param data body requests.AdminAddUserReq true "管理员添加用户请求数据"
+// @Success 200 {object} responses.DefaultResponse "成功返回数据"
+// @Failure 400 {object} responses.DefaultResponse "请求参数错误"
+// @Failure 500 {object} responses.DefaultResponse "服务器内部错误"
+// @Router /user/adminAddUserByName [post]
+func (u *UserHttpService) AdminAddUserByName(c echo.Context, req requests.AdminAddUserReq, resp responses.DefaultResponse) error {
+	u.logger.Info("管理员添加用户", zap.String("userName", req.UserName), zap.String("phone", req.Phone))
+
+	session := u.dao.NewSession()
+	defer session.Close()
+
+	// 检查用户名是否存在
+	existUser := &models.Users{UserName: req.UserName}
+	ok, _ := session.FindOne(existUser)
+	if ok {
+		return protocol.Response(c, constants.ErrUserAlreadyExists, nil)
+	}
+
+	// 检查手机号是否存在
+	existPhone := &models.Users{Phone: req.Phone}
+	ok, _ = session.FindOne(existPhone)
+	if ok {
+		return protocol.Response(c, constants.ErrUserAlreadyExists.AppendErrors(fmt.Errorf("手机号已存在")), nil)
+	}
+
+	salt := uuid.GenString(8)
+	now := time.Now().Unix()
+
+	user := &models.Users{
+		UserName:  req.UserName,
+		Phone:     req.Phone,
+		Password:  req.Password, // TODO: 应该加密存储
+		Salt:      salt,
+		Active:    1,
+		CreatedAt: now,
+	}
+
+	_, err := session.InsertOne(user)
+	if err != nil {
+		u.logger.Error("管理员添加用户失败", zap.Error(err))
+		return protocol.Response(c, constants.ErrUserRegFailed.AppendErrors(err), nil)
+	}
+
+	return protocol.Response(c, nil, map[string]interface{}{
+		"success": true,
+		"message": "使用用户名添加用户成功",
+		"user_id": user.Id,
+	})
+}
+
+// UserAdminPayment 用户充值接口
+// @Summary 用户充值接口
+// @Description 管理员为用户充值
+// @Tags User
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "Bearer {token}"
+// @Param req body requests.UserAdminPaymentReq true "请求参数"
+// @Success 200 {object} responses.DefaultResponse
+// @Failure 400 {object} responses.DefaultResponse
+// @Failure 500 {object} responses.DefaultResponse
+// @Router /user/userAdminPayment [post]
+func (u *UserHttpService) UserAdminPayment(c echo.Context, req requests.UserAdminPaymentReq, resp responses.DefaultResponse) error {
+	u.logger.Info("用户充值", zap.String("userName", req.UserName), zap.Int64("amount", req.Amount))
+
+	adminUserIdStr := c.Request().Header.Get("id")
+	adminUserId, err := strconv.ParseInt(adminUserIdStr, 10, 64)
+	if err != nil {
+		return protocol.Response(c, constants.ErrInvalidParams.AppendErrors(err), nil)
+	}
+
+	// 检查管理员权限
+	ok, err := u.checkUserIsAdmin(adminUserId)
+	if err != nil {
+		return protocol.Response(c, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+	if !ok {
+		u.logger.Info("not admin user cant do this", zap.Int64("userId", adminUserId))
+		return protocol.Response(c, constants.ErrAuthFailed, nil)
+	}
+
+	session := u.dao.NewSession()
+	defer session.Close()
+
+	// 查找用户
+	user := &models.Users{UserName: req.UserName}
+	ok, err = session.FindOne(user)
+	if err != nil || !ok {
+		return protocol.Response(c, constants.ErrUserNotFound, nil)
+	}
+
+	amount := req.Amount * 1000000 // 转换单位
+	walletType := "RMB"
+	walletAddress := ""
+	payChannel := "system"
+
+	// 充值事务操作
+	transactionSession := databases.NewSessionWrapper(u.dao)
+	tsErr := transactionSession.Execute(func(session databases.SessionDao) error {
+		payUserWallet := &models.UserWallet{UserId: user.Id}
+		ok, err = session.FindOne(payUserWallet)
+		if err != nil {
+			return err
+		}
+		now := time.Now().Unix()
+		if !ok {
+			// 用户钱包不存在，创建一个
+			payUserWallet.UserId = user.Id
+			payUserWallet.WalletType = walletType
+			payUserWallet.WalletAddress = walletAddress
+			payUserWallet.Balance = amount
+			payUserWallet.CreatedAt = now
+			payUserWallet.UpdatedAt = now
+			if _, err = session.InsertOne(payUserWallet); err != nil {
+				u.logger.Error("insert user wallet fail",
+					zap.Int64("adminUserId", adminUserId),
+					zap.String("userName", user.UserName),
+					zap.Int64("payUserId", user.Id),
+					zap.Int64("amount", amount),
+					zap.String("reason", req.Reason))
+				return err
+			}
+		} else {
+			// 钱包存在，更新余额
+			payUserWallet.UpdatedAt = now
+			payUserWallet.Balance += amount
+			if _, err = session.UpdateById(payUserWallet.Id, payUserWallet); err != nil {
+				u.logger.Error("update user wallet fail",
+					zap.Int64("adminUserId", adminUserId),
+					zap.Int64("payUserId", user.Id),
+					zap.Int64("amount", amount),
+					zap.String("reason", req.Reason))
+				return err
+			}
+		}
+		return nil
+	}).Execute(func(session databases.SessionDao) error {
+		// 增加充值日志
+		payLog := &models.UserPayLog{
+			UserId:      user.Id,
+			AdminUserId: adminUserId,
+			PayAmount:   amount,
+			PayReason:   req.Reason,
+			PayChannel:  payChannel,
+			PayTime:     time.Now().Unix(),
+		}
+		if _, err = session.InsertOne(payLog); err != nil {
+			u.logger.Error("insert user pay log fail",
+				zap.Int64("adminUserId", adminUserId),
+				zap.Int64("payUserId", user.Id),
+				zap.Int64("amount", amount),
+				zap.String("userName", user.UserName),
+				zap.String("reason", req.Reason))
+			return err
+		}
+		return nil
+	}).CommitAndClose()
+
+	if tsErr != nil {
+		u.logger.Error("用户充值事务失败", zap.Error(tsErr))
+		return protocol.Response(c, constants.ErrUserPayment.AppendErrors(tsErr), nil)
+	}
+
+	u.logger.Info("用户充值成功",
+		zap.Int64("adminUserId", adminUserId),
+		zap.Int64("userId", user.Id),
+		zap.Int64("amount", amount),
+		zap.String("reason", req.Reason))
+
+	return protocol.Response(c, nil, "用户充值完成")
+}
+
+// checkUserIsAdmin 检查用户是否是管理员
+func (u *UserHttpService) checkUserIsAdmin(userId int64) (bool, error) {
+	session := u.dao.NewSession()
+	defer session.Close()
+	adminUser := &models.PlatformUsers{}
+	ok, err := session.FindById(userId, adminUser)
+	if err != nil {
+		return false, err
+	}
+	if !ok {
+		return false, nil
+	}
+	// 检查用户是否为管理员
+	return true, nil
 }

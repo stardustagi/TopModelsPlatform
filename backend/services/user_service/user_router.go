@@ -45,4 +45,16 @@ func (u *UserHttpService) initialization() {
 		[]string{"User"},
 		u.SetActive,
 	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.AdminAddUserReq, responses.DefaultResponse](
+		"adminAddUserByName",
+		[]string{"admin", "addUserByName"},
+		u.AdminAddUserByName,
+	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.UserAdminPaymentReq, responses.DefaultResponse](
+		"userAdminPayment",
+		[]string{"user", "payment"},
+		u.UserAdminPayment,
+	))
 }

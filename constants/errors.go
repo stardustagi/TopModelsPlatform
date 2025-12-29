@@ -15,6 +15,13 @@ var (
 	ErrInvalidPassword   = topError.New("密码错误", 1006)
 	ErrUserNotActive     = topError.New("用户未激活", 1007)
 	ErrNotDataSet        = topError.New("Not data set", 1005)
+	ErrUserPayment       = topError.New("用户充值失败", 1008)
+
+	// 验证码相关错误
+	ErrVerifyCode    = topError.New("验证码错误", 3001)
+	ErrGetVerifyCode = topError.New("获取验证码失败", 3002)
+	ErrSendSMS       = topError.New("发送短信失败", 3003)
+	ErrSendMail      = topError.New("发送邮件失败", 3004)
 
 	// 模型相关错误
 	ErrModelNotFound      = topError.New("模型不存在", 2001)
