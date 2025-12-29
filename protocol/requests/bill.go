@@ -46,7 +46,7 @@ type CreateUserRebateConfigReq struct {
 	TierStart  int64 `json:"tier_start" validate:"gte=0"`
 	TierEnd    int64 `json:"tier_end" validate:"required,gtefield=TierStart|eq=-1"`
 	RebateRate int   `json:"rebate_rate" validate:"required,gte=0,lte=100"`
-	Status     int   `json:"status" validate:"oneof=0 1"`
+	Status     *int  `json:"status"` // 使用指针，nil时默认启用，0表示禁用，1表示启用
 }
 
 type UpdateUserRebateConfigReq struct {
@@ -65,4 +65,14 @@ type GetUserRebateConfigReq struct {
 type GetUserRebateInfoReq struct {
 	PageInfo PageReq `json:"page_info"`
 	UserId   int64   `json:"user_id" validate:"required,gt=0"`
+}
+
+// GetUserConsumeRecordReq 获取用户消费记录请求
+type GetUserConsumeRecordReq struct {
+	PageInfo   PageReq `json:"page_info"`
+	UserId     int64   `json:"user_id" validate:"gte=0"`
+	StartTime  int64   `json:"start_time"`
+	EndTime    int64   `json:"end_time"`
+	Model      string  `json:"model"`
+	ProviderId string  `json:"provider_id"`
 }

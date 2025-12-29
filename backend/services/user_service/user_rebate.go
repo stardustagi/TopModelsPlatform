@@ -79,19 +79,21 @@ func (u *UserHttpService) CreateUserRebateConfig(ctx echo.Context,
 
 	// 创建返利配置
 	now := time.Now().Unix()
+
+	// 处理 Status：nil时默认启用(1)，否则使用传入的值
+	status := 1
+	if req.Status != nil {
+		status = *req.Status
+	}
+
 	rebateConfig := &models.UserRebateConfig{
 		UserId:     req.UserId,
 		TierStart:  req.TierStart,
 		TierEnd:    req.TierEnd,
 		RebateRate: req.RebateRate,
-		Status:     req.Status,
+		Status:     status,
 		CreatedAt:  now,
 		UpdatedAt:  now,
-	}
-
-	// 默认启用
-	if req.Status == 0 {
-		rebateConfig.Status = 1
 	}
 
 	_, err = session.InsertOne(rebateConfig)
@@ -186,7 +188,11 @@ func (u *UserHttpService) UpdateUserRebateConfig(ctx echo.Context,
 	existingConfig.Status = req.Status
 	existingConfig.UpdatedAt = time.Now().Unix()
 
-	_, err = session.UpdateById(req.Id, existingConfig)
+	// 使用 Cols 强制更新 Status 字段（避免零值被忽略）
+	_, err = session.Native().
+		ID(req.Id).
+		Cols("tier_start", "tier_end", "rebate_rate", "status", "updated_at").
+		Update(existingConfig)
 	if err != nil {
 		u.logger.Error("修改返利配置失败", zap.Error(err))
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
