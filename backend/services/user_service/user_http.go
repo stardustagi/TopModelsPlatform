@@ -98,7 +98,10 @@ func (u *UserHttpService) List(c echo.Context, req requests.PageReq, resp respon
 
 	var users []models.Users
 	pageable := databases.NewPageable(req.Skip, req.Limit, req.Sort)
-	total, err := session.FindAndCount(&users, pageable)
+
+	// 查询条件：排除已删除用户
+	queryModel := &models.Users{Deleted: 0}
+	total, err := session.FindAndCount(&users, pageable, queryModel)
 	if err != nil {
 		u.logger.Error("查询用户列表失败", zap.Error(err))
 		return protocol.Response(c, constants.ErrInternalServer, nil)
