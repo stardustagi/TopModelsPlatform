@@ -10,7 +10,7 @@ import (
 func (u *UserHttpService) initialization() {
 	u.app.AddGroup("user", backend.PlatformUserAccess(), server.Request())
 
-	u.app.AddGetHandler("user", server.NewHandler(
+	u.app.AddPostHandler("user", server.NewHandler(
 		"list",
 		[]string{"User"},
 		u.List,

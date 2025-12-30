@@ -92,6 +92,9 @@ func (u *UserHttpService) List(c echo.Context, req requests.PageReq, resp respon
 	if req.Limit > 100 {
 		req.Limit = 100
 	}
+	if req.Sort == "" {
+		req.Sort = "id ASC"
+	}
 
 	var users []models.Users
 	pageable := databases.NewPageable(req.Skip, req.Limit, req.Sort)

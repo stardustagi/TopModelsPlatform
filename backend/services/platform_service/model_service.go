@@ -172,6 +172,9 @@ func (p *PlatfromHttpService) UpdateModel(c echo.Context, req requests.UpdateMod
 	if req.Address != "" {
 		model.Address = req.Address
 	}
+	if req.ApiStyles != "" {
+		model.ApiStyles = req.ApiStyles
+	}
 	model.LastUpdate = time.Now().Unix()
 
 	_, err = session.UpdateById(model.Id, model)
