@@ -37,29 +37,29 @@ func main() {
 	// 启动平台服务
 	platformService := platform.GetUsersHttpServiceInstance()
 	platformService.Start(app)
+	defer platformService.Stop()
 	logger.Info("Platform service started")
 
 	// 启动用户服务
 	userService := user_service.GetUserHttpServiceInstance()
 	userService.Start(app)
+	defer userService.Stop()
 	logger.Info("User service started")
 
 	// 启动报表服务
 	report := node_report.GetNodeHttpReportServiceInstance()
 	report.Start(app)
+	defer report.Stop()
 	logger.Info("Node report service started")
 
 	// 启动计费配置服务
 	billConfigService := node_bill.GetNodeHttpBillServiceInstance()
 	billConfigService.Start(app)
+	defer billConfigService.Stop()
 	logger.Info("Node bill service started")
 
 	app.Start()
 	// 停止服务
 	app.Stop()
-	platformService.Stop()
-	userService.Stop()
-	report.Stop()
-	billConfigService.Stop()
 	logger.Info("Services stopped")
 }
