@@ -76,3 +76,10 @@ type GetUserConsumeRecordReq struct {
 	Model      string  `json:"model"`
 	ProviderId string  `json:"provider_id"`
 }
+
+// UserConsumeDetailReq 获取用户消费详情请求
+type UserConsumeDetailReq struct {
+	ConsumeId   int64   `json:"consume_id" validate:"required"`
+	ConsumeType string  `json:"consume_type"`
+	Page        PageReq `json:"page"`
+}

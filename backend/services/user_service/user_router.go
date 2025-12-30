@@ -83,4 +83,16 @@ func (u *UserHttpService) initialization() {
 		[]string{"user", "modelProviderInfo"},
 		u.GetModelsProviderInfoList,
 	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.GetUserConsumeRecordReq, responses.DefaultResponse](
+		"getUserConsumeRecord",
+		[]string{"user", "consume"},
+		u.GetUserConsumeRecord,
+	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.UserConsumeDetailReq, responses.DefaultResponse](
+		"getUserConsumeDetail",
+		[]string{"user", "consume"},
+		u.GetUserConsumeDetail,
+	))
 }
