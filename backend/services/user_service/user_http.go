@@ -404,7 +404,7 @@ func (u *UserHttpService) UserAdminPayment(c echo.Context, req requests.UserAdmi
 		return protocol.Response(c, constants.ErrUserNotFound, nil)
 	}
 
-	amount := req.Amount * 1000000 // 转换单位
+	amount := req.Amount * constants.TokenRatio
 	walletType := "RMB"
 	walletAddress := ""
 	payChannel := "system"
