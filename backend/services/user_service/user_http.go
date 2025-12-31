@@ -95,53 +95,10 @@ func (u *UserHttpService) List(c echo.Context, req requests.PageReq, resp respon
 	if req.Sort == "" {
 		req.Sort = "id ASC"
 	}
-
-	var users []models.Users
-
-	// 使用 Native().Where() 显式过滤已删除用户，避免零值被忽略
-	total, err := session.Native().
-		Where("deleted = ?", 0).
-		OrderBy(req.Sort).
-		Limit(req.Limit, req.Skip).
-		FindAndCount(&users)
+	result, err := session.CallProcedure("GetUserInfoList", req.Skip, req.Limit, req.Sort)
 	if err != nil {
 		u.logger.Error("查询用户列表失败", zap.Error(err))
-		return protocol.Response(c, constants.ErrInternalServer, nil)
-	}
-
-	// 构建返回结果，包含钱包余额信息
-	type UserWithWallet struct {
-		models.Users
-		Balance       int64 `json:"balance"`
-		RebateBalance int64 `json:"rebate_balance"`
-	}
-
-	var userList []UserWithWallet
-	for _, user := range users {
-		user.Password = ""
-		user.Salt = ""
-
-		// 查询用户钱包信息
-		wallet := &models.UserWallet{UserId: user.Id}
-		ok, _ := session.FindOne(wallet)
-
-		userWithWallet := UserWithWallet{
-			Users:         user,
-			Balance:       0,
-			RebateBalance: 0,
-		}
-		if ok {
-			userWithWallet.Balance = wallet.Balance
-			userWithWallet.RebateBalance = wallet.RebateBalance
-		}
-		userList = append(userList, userWithWallet)
-	}
-
-	result := map[string]interface{}{
-		"list":  userList,
-		"total": total,
-		"skip":  req.Skip,
-		"limit": req.Limit,
+		return protocol.Response(c, constants.ErrInternalServer.AppendErrors(err), nil)
 	}
 	return protocol.Response(c, nil, result)
 }
