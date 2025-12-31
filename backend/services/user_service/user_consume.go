@@ -106,7 +106,7 @@ func (u *UserHttpService) GetUserConsumeDetail(
 	defer session.Close()
 
 	// 根据 ConsumeId 查询消费记录
-	consumeRecord := &models.UserConsumeRecord{ID: req.ConsumeId}
+	consumeRecord := &models.UserConsumeRecord{Id: req.ConsumeId}
 	ok, err := session.FindOne(consumeRecord)
 	if err != nil {
 		u.logger.Error("查询消费记录失败", zap.Error(err))
