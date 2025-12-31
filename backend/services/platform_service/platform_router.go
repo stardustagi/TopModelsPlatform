@@ -65,4 +65,22 @@ func (p *PlatfromHttpService) initialization() {
 		"phoneCode",
 		[]string{"phoneCode"},
 		p.GetPhoneCode))
+
+	// 告警配置路由 - 需要认证
+	p.app.AddGroup("alarm", backend.PlatformUserAccess(), server.Request())
+	p.app.AddPostHandler("alarm", server.NewHandler[requests.CreateAlarmReq, responses.DefaultResponse](
+		"create",
+		[]string{"Alarm"},
+		p.CreateAlarm,
+	))
+	p.app.AddPostHandler("alarm", server.NewHandler[requests.UpdateAlarmReq, responses.DefaultResponse](
+		"update",
+		[]string{"Alarm"},
+		p.UpdateAlarm,
+	))
+	p.app.AddPostHandler("alarm", server.NewHandler[requests.GetAlarmReq, responses.DefaultResponse](
+		"get",
+		[]string{"Alarm"},
+		p.GetAlarm,
+	))
 }
