@@ -9,6 +9,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/stardustagi/TopLib/libs/databases"
+	"github.com/stardustagi/TopLib/libs/jwt"
 	"github.com/stardustagi/TopLib/libs/logs"
 	"github.com/stardustagi/TopLib/libs/redis"
 	"github.com/stardustagi/TopLib/libs/uuid"
@@ -156,18 +157,23 @@ func (u *UserHttpService) Create(c echo.Context, req requests.CreateUserReq, res
 
 	salt := uuid.GenString(8)
 	now := time.Now().Unix()
+	enPassword, err := jwt.EncryptWithFixedSalt(req.Password, constants.ObtenationIterations, req.UserName, salt)
+	if err != nil {
+		u.logger.Error("密码加密失败", zap.Error(err))
+		return protocol.Response(c, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
 
 	user := &models.Users{
 		UserName:  req.UserName,
 		Email:     req.Email,
 		Phone:     req.Phone,
-		Password:  req.Password,
+		Password:  enPassword,
 		Salt:      salt,
 		Active:    1,
 		CreatedAt: now,
 	}
 
-	_, err := session.InsertOne(user)
+	_, err = session.InsertOne(user)
 	if err != nil {
 		u.logger.Error("创建用户失败", zap.Error(err))
 		return protocol.Response(c, constants.ErrUserRegFailed, nil)
@@ -207,6 +213,10 @@ func (u *UserHttpService) Update(c echo.Context, req requests.UpdateUserReq, res
 	}
 	if req.RealName != "" {
 		user.RealName = req.RealName
+	}
+	if req.Password != "" {
+		user.Salt = uuid.GenString(8)
+		user.Password, err = jwt.EncryptWithFixedSalt(req.Password, constants.ObtenationIterations, user.UserName, user.Salt)
 	}
 	user.LastUpdate = time.Now().Unix()
 

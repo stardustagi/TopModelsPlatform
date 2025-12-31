@@ -26,6 +26,7 @@ type UpdateUserReq struct {
 	UserName string `json:"user_name"`
 	Phone    string `json:"phone"`
 	RealName string `json:"real_name"`
+	Password string `json:"password" validate:"omitempty,min=6"`
 }
 
 type SetActiveReq struct {
