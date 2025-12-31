@@ -109,13 +109,36 @@ func (u *UserHttpService) List(c echo.Context, req requests.PageReq, resp respon
 		return protocol.Response(c, constants.ErrInternalServer, nil)
 	}
 
-	for i := range users {
-		users[i].Password = ""
-		users[i].Salt = ""
+	// 构建返回结果，包含钱包余额信息
+	type UserWithWallet struct {
+		models.Users
+		Balance       int64 `json:"balance"`
+		RebateBalance int64 `json:"rebate_balance"`
+	}
+
+	var userList []UserWithWallet
+	for _, user := range users {
+		user.Password = ""
+		user.Salt = ""
+
+		// 查询用户钱包信息
+		wallet := &models.UserWallet{UserId: user.Id}
+		ok, _ := session.FindOne(wallet)
+
+		userWithWallet := UserWithWallet{
+			Users:         user,
+			Balance:       0,
+			RebateBalance: 0,
+		}
+		if ok {
+			userWithWallet.Balance = wallet.Balance
+			userWithWallet.RebateBalance = wallet.RebateBalance
+		}
+		userList = append(userList, userWithWallet)
 	}
 
 	result := map[string]interface{}{
-		"list":  users,
+		"list":  userList,
 		"total": total,
 		"skip":  req.Skip,
 		"limit": req.Limit,
