@@ -99,6 +99,7 @@ func (h *Application) syncDatabaseSchema() {
 		&models.UserRebateConfig{},
 		&models.UserRebateMonthly{},
 		&models.UserWallet{},
+		&models.AlarmConfig{},
 	}
 	dbDao := databases.GetDao()
 	if err := dbDao.Native().Sync2(modelList...); err != nil {
