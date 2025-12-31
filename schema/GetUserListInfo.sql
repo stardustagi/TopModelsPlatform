@@ -60,8 +60,8 @@ BEGIN
             u.phone_code,
             u.is_admin,
             u.is_private,
-            IFNULL(w.balance, 0) AS balance,
-            IFNULL(w.rebate_balance, 0) AS rebate_balance,
+            IFNULL(w.balance, 0)/10000 AS balance,
+            IFNULL(w.rebate_balance, 0)/10000 AS rebate_balance,
             w.wallet_type,
             w.wallet_address
         FROM users u
