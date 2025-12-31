@@ -83,3 +83,9 @@ type UserConsumeDetailReq struct {
 	ConsumeType string  `json:"consume_type"`
 	Page        PageReq `json:"page"`
 }
+
+// GetDayReportListReq 获取日报表列表请求
+type GetDayReportListReq struct {
+	UserId int64   `json:"user_id"`
+	Page   PageReq `json:"page"`
+}

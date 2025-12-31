@@ -58,3 +58,25 @@ type GetUserRebateInfoResp struct {
 	Data  []UserRebateData `json:"data"`
 	Total int              `json:"total"`
 }
+
+type DayReportItem struct {
+	Id               int64  `json:"id"`
+	UserId           int64  `json:"user_id"`
+	UserName         string `json:"user_name"`
+	ActualProviderId int    `json:"actual_provider_id"`
+	ProviderName     string `json:"provider_name"`
+	ModelId          int    `json:"model_id"`
+	ModelName        string `json:"model_name"`
+	ConsumeType      string `json:"consume_type"`
+	Date             string `json:"date"`
+	TotalConsumed    int64  `json:"total_consumed"`
+	TotalCost        int64  `json:"total_cost"`
+	UpdatedAt        int64  `json:"updated_at"`
+}
+
+type GetDayReportListResp struct {
+	Items []DayReportItem `json:"items"`
+	Total int             `json:"total"`
+	Skip  int             `json:"skip"`
+	Limit int             `json:"limit"`
+}

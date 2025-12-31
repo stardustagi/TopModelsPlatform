@@ -7,6 +7,7 @@ import (
 	"github.com/stardustagi/TopLib/libs/databases"
 	"github.com/stardustagi/TopLib/libs/logs"
 	"github.com/stardustagi/TopLib/libs/redis"
+	"github.com/stardustagi/TopLib/libs/server"
 	"github.com/stardustagi/TopModelsPlatform/backend"
 	"github.com/stardustagi/TopModelsPlatform/constants"
 	"go.uber.org/zap"
@@ -20,10 +21,6 @@ type NodeHttpReportService struct {
 	rds       redis.RedisCli
 	mu        sync.RWMutex
 	app       *backend.Application
-
-	isRunning bool
-	stopCh    chan struct{}
-	wg        sync.WaitGroup
 }
 
 var (
@@ -47,46 +44,34 @@ func NewNodeHttpReportService() *NodeHttpReportService {
 		ctx:       ctx,
 		cancelCtx: cancel,
 		dao:       databases.GetDao(),
-		stopCh:    make(chan struct{}),
 		rds: redis.NewRedisView(redis.GetRedisDb(),
 			constants.PlatformPrefix,
 			logs.GetLogger("NodeReportRedis")),
 	}
 }
 
-func (n *NodeHttpReportService) Start(app *backend.Application) {
+func (rep *NodeHttpReportService) Start(app *backend.Application) {
 	if app == nil {
 		panic("请设置后端应用")
 	}
-	n.app = app
-	n.logger.Info("Starting NodeHttpReportService...")
+	rep.app = app
+	rep.initialization()
+	rep.logger.Info("Starting NodeHttpReportService...")
 
-	n.mu.Lock()
-	defer n.mu.Unlock()
-	if n.isRunning {
-		n.logger.Info("NodeHttpReportService already running")
-		return
-	}
-
-	n.isRunning = true
-	n.logger.Info("NodeHttpReportService started")
 }
 
-func (n *NodeHttpReportService) Stop() {
-	n.logger.Info("Stopping NodeHttpReportService...")
-	n.cancelCtx()
+func (rep *NodeHttpReportService) Stop() {
+	rep.logger.Info("Stopping NodeHttpReportService...")
+	rep.cancelCtx()
+	rep.logger.Info("NodeHttpReportService stopped.")
+}
 
-	n.mu.Lock()
-	defer n.mu.Unlock()
-	if !n.isRunning {
-		n.logger.Info("NodeHttpReportService already stopped")
-		return
-	}
+func (rep *NodeHttpReportService) initialization() {
+	rep.app.AddGroup("report", server.Request(), backend.PlatformUserAccess())
 
-	close(n.stopCh)
-	n.wg.Wait()
-
-	n.stopCh = make(chan struct{})
-	n.isRunning = false
-	n.logger.Info("NodeHttpReportService stopped.")
+	rep.app.AddPostHandler("report", server.NewHandler(
+		"getDayReportList",
+		[]string{"Report"},
+		rep.GetDayReportList,
+	))
 }
