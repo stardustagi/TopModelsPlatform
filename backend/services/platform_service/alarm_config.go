@@ -1,9 +1,11 @@
 package platform
 
 import (
+	"encoding/json"
 	"time"
 
 	"github.com/labstack/echo/v4"
+	"github.com/stardustagi/TopLib/libs/redis"
 	"github.com/stardustagi/TopLib/protocol"
 	"github.com/stardustagi/TopModelsPlatform/constants"
 	"github.com/stardustagi/TopModelsPlatform/models"
@@ -25,7 +27,7 @@ func (p *PlatfromHttpService) CreateAlarm(ctx echo.Context,
 	req requests.CreateAlarmReq, resp responses.DefaultResponse) error {
 	p.logger.Info("创建告警配置",
 		zap.String("type", req.Type),
-		zap.Int64("userId", req.UserId))
+		zap.Int64("userId", *req.UserId))
 
 	session := p.dao.NewSession()
 	defer session.Close()
@@ -37,13 +39,16 @@ func (p *PlatfromHttpService) CreateAlarm(ctx echo.Context,
 	if req.Status != nil {
 		status = *req.Status
 	}
-
+	userId := int64(0)
+	if req.UserId != nil {
+		userId = *req.UserId
+	}
 	alarmConfig := &models.AlarmConfig{
 		Type:       req.Type,
 		Min:        req.Min,
 		Max:        req.Max,
 		Status:     status,
-		UserId:     req.UserId,
+		UserId:     *req.UserId,
 		CreatedAt:  now,
 		LastupDate: now,
 	}
@@ -54,7 +59,21 @@ func (p *PlatfromHttpService) CreateAlarm(ctx echo.Context,
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
 	}
 
-	p.logger.Info("创建告警配置成功", zap.Int64("id", alarmConfig.Id))
+	// 将告警配置写入Redis
+	redisKey := constants.PlatformAlarmKey(userId)
+	rds := redis.GetRedisDb()
+	alarmJson, err := json.Marshal(alarmConfig)
+	if err != nil {
+		p.logger.Error("序列化告警配置失败", zap.Error(err))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+	err = rds.Set(p.ctx, redisKey, alarmJson, 0).Err()
+	if err != nil {
+		p.logger.Error("写入Redis告警配置失败", zap.Error(err), zap.String("key", redisKey))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+
+	p.logger.Info("创建告警配置成功", zap.Int64("id", alarmConfig.Id), zap.String("redisKey", redisKey))
 
 	return protocol.Response(ctx, nil, map[string]interface{}{
 		"id":      alarmConfig.Id,
@@ -102,8 +121,10 @@ func (p *PlatfromHttpService) UpdateAlarm(ctx echo.Context,
 	if req.Status != nil {
 		existingConfig.Status = *req.Status
 	}
-	if req.UserId > 0 {
-		existingConfig.UserId = req.UserId
+	if req.UserId != nil {
+		existingConfig.UserId = *req.UserId
+	} else {
+		existingConfig.UserId = 0
 	}
 	existingConfig.LastupDate = time.Now().Unix()
 
@@ -117,7 +138,21 @@ func (p *PlatfromHttpService) UpdateAlarm(ctx echo.Context,
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
 	}
 
-	p.logger.Info("更新告警配置成功", zap.Int64("id", req.Id))
+	// 将更新后的告警配置写入Redis
+	redisKey := constants.PlatformAlarmKey(req.Id)
+	alarmJson, err := json.Marshal(existingConfig)
+	if err != nil {
+		p.logger.Error("序列化告警配置失败", zap.Error(err))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+	rds := redis.GetRedisDb()
+	err = rds.Set(p.ctx, redisKey, alarmJson, 0).Err()
+	if err != nil {
+		p.logger.Error("写入Redis告警配置失败", zap.Error(err), zap.String("key", redisKey))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+
+	p.logger.Info("更新告警配置成功", zap.Int64("id", req.Id), zap.String("redisKey", redisKey))
 
 	return protocol.Response(ctx, nil, map[string]interface{}{
 		"id":      req.Id,

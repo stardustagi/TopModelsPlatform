@@ -6,7 +6,7 @@ type CreateAlarmReq struct {
 	Min    int    `json:"min" validate:"gte=0"`
 	Max    int    `json:"max" validate:"gtefield=Min"`
 	Status *int   `json:"status"` // 使用指针区分未传值和0
-	UserId int64  `json:"user_id" validate:"required,gt=0"`
+	UserId *int64 `json:"user_id"`
 }
 
 // UpdateAlarmReq 更新告警配置请求
@@ -16,7 +16,7 @@ type UpdateAlarmReq struct {
 	Min    *int   `json:"min"`
 	Max    *int   `json:"max"`
 	Status *int   `json:"status"`
-	UserId int64  `json:"user_id"`
+	UserId *int64 `json:"user_id"`
 }
 
 // GetAlarmReq 获取告警配置请求

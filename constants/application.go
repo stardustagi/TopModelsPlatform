@@ -75,3 +75,7 @@ func PlatformAccessModelsKey(nodeId string) string {
 func PlatformUserAccessTokenKey(nodeUserId int64) string {
 	return fmt.Sprintf("nodeUser:token:%d", nodeUserId)
 }
+
+func PlatformAlarmKey(id int64) string {
+	return fmt.Sprintf("%s:platform:alarm:%d", RedisPrefix, id)
+}
