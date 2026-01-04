@@ -8,11 +8,11 @@ import (
 
 type ProviderModelDailySummary struct {
 	Id               int64  `json:"id" xorm:"'id' pk autoincr comment('主键，自增') BIGINT(20)"`
-	UserId           int64  `json:"user_id" xorm:"'user_id' not null comment('用户ID') index unique(idx_user_provider_model_type_date) BIGINT(20)"`
-	ActualProviderId int    `json:"actual_provider_id" xorm:"'actual_provider_id' not null comment('实际服务商ID') unique(idx_user_provider_model_type_date) INT(11)"`
-	ModelId          int    `json:"model_id" xorm:"'model_id' not null comment('模型ID') unique(idx_user_provider_model_type_date) INT(11)"`
-	ConsumeType      string `json:"consume_type" xorm:"'consume_type' not null comment('消费类型') unique(idx_user_provider_model_type_date) VARCHAR(32)"`
-	Date             string `json:"date" xorm:"'date' not null comment('日期YYYY-MM-DD') index unique(idx_user_provider_model_type_date) VARCHAR(10)"`
+	UserId           int64  `json:"user_id" xorm:"'user_id' not null comment('用户ID') BIGINT(20)"`
+	ActualProviderId int    `json:"actual_provider_id" xorm:"'actual_provider_id' not null comment('实际服务商ID') INT(11)"`
+	ModelId          int    `json:"model_id" xorm:"'model_id' not null comment('模型ID') INT(11)"`
+	ConsumeType      string `json:"consume_type" xorm:"'consume_type' not null comment('消费类型') VARCHAR(32)"`
+	Date             string `json:"date" xorm:"'date' not null comment('日期YYYY-MM-DD') VARCHAR(10)"`
 	TotalConsumed    int64  `json:"total_consumed" xorm:"'total_consumed' default 0 comment('总消费金额') BIGINT(20)"`
 	TotalCost        int64  `json:"total_cost" xorm:"'total_cost' default 0 comment('总成本') BIGINT(20)"`
 	UpdatedAt        int64  `json:"updated_at" xorm:"'updated_at' comment('更新时间') BIGINT(20)"`
