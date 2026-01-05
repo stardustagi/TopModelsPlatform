@@ -8,9 +8,9 @@ import (
 
 type Users struct {
 	Id                       int64  `json:"id" xorm:"'id' pk autoincr BIGINT(12)"`
-	UserName                 string `json:"user_name" xorm:"'user_name' comment('用户名') VARCHAR(20)"`
-	Email                    string `json:"email" xorm:"'email' comment('邮件地址') VARCHAR(32)"`
-	Phone                    string `json:"phone" xorm:"'phone' comment('电话号码') VARCHAR(20)"`
+	UserName                 string `json:"user_name" xorm:"'user_name' comment('用户名') unique VARCHAR(20)"`
+	Email                    string `json:"email" xorm:"'email' comment('邮件地址') unique VARCHAR(32)"`
+	Phone                    string `json:"phone" xorm:"'phone' comment('电话号码') unique VARCHAR(20)"`
 	Password                 string `json:"password" xorm:"'password' comment('密码') VARCHAR(128)"`
 	RealName                 string `json:"real_name" xorm:"'real_name' comment('真实性名') VARCHAR(20)"`
 	IdNumber                 string `json:"id_number" xorm:"'id_number' comment('身份证') VARCHAR(20)"`
@@ -35,8 +35,13 @@ func (o *Users) TableName() string {
 	return "users"
 }
 
-func (o *Users) GetSliceName(slice string) string {
-	return fmt.Sprintf("users_%s", slice)
+func (o *Users) GetSliceName(slice string, num uint32) string {
+	var hash uint32
+	for _, c := range slice {
+		hash = hash*31 + uint32(c)
+	}
+	shardIndex := hash % num
+	return fmt.Sprintf("users_%d", shardIndex)
 }
 
 func (o *Users) GetSliceDateMonthTable() string {
