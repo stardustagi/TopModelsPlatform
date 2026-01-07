@@ -74,4 +74,16 @@ func (rep *NodeHttpReportService) initialization() {
 		[]string{"Report"},
 		rep.GetDayReportList,
 	))
+
+	rep.app.AddPostHandler("report", server.NewHandler(
+		"getDayReportSummary",
+		[]string{"Report"},
+		rep.GetDayReportSummary,
+	))
+
+	rep.app.AddPostHandler("report", server.NewHandler(
+		"getReportDetailList",
+		[]string{"Report"},
+		rep.GetReportDetailList,
+	))
 }
