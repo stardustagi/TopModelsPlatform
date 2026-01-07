@@ -272,6 +272,5 @@ func (rep *NodeHttpReportService) getShardedTableNames(startDate, endDate int64)
 		tableName := fmt.Sprintf("status_report_%d%02d%02d", current.Year(), current.Month(), current.Day())
 		tableNames = append(tableNames, tableName)
 	}
-
 	return tableNames
 }

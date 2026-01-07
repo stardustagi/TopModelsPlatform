@@ -15,6 +15,7 @@ type AlarmConfig struct {
 	Status     int    `json:"status" xorm:"'status' comment('0,1') TINYINT(1)"`
 	LastupDate int64  `json:"lastup_date" xorm:"'lastup_date' BIGINT(12)"`
 	UserId     int64  `json:"user_id" xorm:"'user_id' BIGINT(12)"`
+	AlarmType  string `json:"alarm_type" xorm:"'alarm_type' comment('email,sms') VARCHAR(12)"`
 }
 
 func (o *AlarmConfig) TableName() string {
