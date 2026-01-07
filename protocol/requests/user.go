@@ -51,3 +51,15 @@ type UserAdminPaymentReq struct {
 type GetModelsProviderInfoListReq struct {
 	ProviderName string `json:"provider_name"`
 }
+
+type GetUserAdminPaymentListReq struct {
+	Page           PageReq `json:"page_info"`
+	UserName       string  `json:"user_name"`
+	PayStartTime   int64   `json:"start_time"`
+	PayEndTime     int64   `json:"end_time"`
+	PayChannel     string  `json:"pay_channel"`
+	PayAmountStart int64   `json:"pay_amount_start"`
+	PayAmountEnd   int64   `json:"pay_amount_end"`
+	PayReason      string  `json:"pay_reason"`
+	AdminUserName  string  `json:"admin_user_name"`
+}

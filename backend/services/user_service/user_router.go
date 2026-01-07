@@ -57,6 +57,13 @@ func (u *UserHttpService) initialization() {
 		[]string{"user", "payment"},
 		u.UserAdminPayment,
 	))
+
+	u.app.AddPostHandler("user", server.NewHandler[requests.GetUserAdminPaymentListReq, responses.GetUserAdminPaymentListResp](
+		"getUserAdminPaymentList",
+		[]string{"user", "paymentList"},
+		u.GetUserAdminPaymentList,
+	))
+
 	u.app.AddPostHandler("user", server.NewHandler[requests.CreateUserRebateConfigReq, responses.DefaultResponse](
 		"createUserRebateConfig",
 		[]string{"user", "rebate"},

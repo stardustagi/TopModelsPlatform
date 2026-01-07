@@ -490,3 +490,90 @@ func (u *UserHttpService) checkUserIsAdmin(userId int64) (bool, error) {
 	// 检查用户是否为管理员
 	return true, nil
 }
+
+// GetUserAdminPaymentList 获取用户充值记录列表
+// @Summary 获取用户充值记录列表
+// @Description 分页获取用户充值记录，支持多种筛选条件
+// @Tags User
+// @Accept json
+// @Produce json
+// @Param request body requests.GetUserAdminPaymentListReq true "获取充值记录请求"
+// @Success 200 {object} responses.GetUserAdminPaymentListResp
+// @Router /user/getUserAdminPaymentList [post]
+func (u *UserHttpService) GetUserAdminPaymentList(c echo.Context,
+	req requests.GetUserAdminPaymentListReq,
+	resp responses.GetUserAdminPaymentListResp) error {
+	u.logger.Info("获取用户充值记录列表",
+		zap.String("userName", req.UserName),
+		zap.String("adminUserName", req.AdminUserName))
+
+	session := u.dao.NewSession()
+	defer session.Close()
+
+	// 默认分页
+	if req.Page.Limit <= 0 {
+		req.Page.Limit = 20
+	}
+	if req.Page.Sort == "" {
+		req.Page.Sort = "upl.id desc"
+	}
+
+	// 构建查询条件，关联用户表和管理员表
+	query := session.Native().
+		Table("user_pay_log").Alias("upl").
+		Join("LEFT", []string{"users", "u"}, "upl.user_id = u.id").
+		Join("LEFT", []string{"platform_users", "pu"}, "upl.admin_user_id = pu.id").
+		Select("upl.id, upl.user_id, u.user_name, upl.pay_amount, upl.pay_reason, upl.pay_time, upl.pay_channel, upl.admin_user_id, pu.user_name as admin_name")
+
+	// 可选条件：用户名（模糊查询）
+	if req.UserName != "" {
+		query = query.Where("u.user_name LIKE ?", "%"+req.UserName+"%")
+	}
+
+	// 可选条件：充值时间范围
+	if req.PayStartTime > 0 {
+		query = query.And("upl.pay_time >= ?", req.PayStartTime)
+	}
+	if req.PayEndTime > 0 {
+		query = query.And("upl.pay_time <= ?", req.PayEndTime)
+	}
+
+	// 可选条件：充值渠道
+	if req.PayChannel != "" {
+		query = query.And("upl.pay_channel = ?", req.PayChannel)
+	}
+
+	// 可选条件：充值金额范围
+	if req.PayAmountStart > 0 {
+		query = query.And("upl.pay_amount >= ?", req.PayAmountStart)
+	}
+	if req.PayAmountEnd > 0 {
+		query = query.And("upl.pay_amount <= ?", req.PayAmountEnd)
+	}
+
+	// 可选条件：充值原因（模糊查询）
+	if req.PayReason != "" {
+		query = query.And("upl.pay_reason LIKE ?", "%"+req.PayReason+"%")
+	}
+
+	// 可选条件：管理员用户名（模糊查询）
+	if req.AdminUserName != "" {
+		query = query.And("pu.user_name LIKE ?", "%"+req.AdminUserName+"%")
+	}
+
+	// 查询数据列表
+	var list []responses.UserAdminPaymentItem
+	total, err := query.
+		OrderBy(req.Page.Sort).
+		Limit(req.Page.Limit, req.Page.Skip).
+		FindAndCount(&list)
+	if err != nil {
+		u.logger.Error("查询用户充值记录失败", zap.Error(err))
+		return protocol.Response(c, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+
+	resp.List = list
+	resp.Total = int(total)
+
+	return protocol.Response(c, nil, resp)
+}
