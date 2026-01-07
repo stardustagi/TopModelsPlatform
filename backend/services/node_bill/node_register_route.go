@@ -3,39 +3,45 @@ package node_bill
 import (
 	"github.com/stardustagi/TopLib/libs/server"
 	"github.com/stardustagi/TopModelsPlatform/backend"
+	"github.com/stardustagi/TopModelsPlatform/protocol/requests"
+	"github.com/stardustagi/TopModelsPlatform/protocol/responses"
 )
 
 func (n *NodeHttpBillService) initialization() {
-	n.app.AddGroup("node/bill", server.Request(), backend.PlatformUserAccess())
 
-	// 模型折扣相关路由
-	n.app.AddPostHandler("node/bill", server.NewHandler(
-		"createModelsDiscount",
-		[]string{"bill", "discount"},
-		n.CreateModelsDiscount))
+	n.app.AddGroup("bill", server.Request(), backend.PlatformUserAccess())
 
-	n.app.AddPostHandler("node/bill", server.NewHandler(
-		"getModelsDiscount",
-		[]string{"bill", "discount"},
-		n.GetModelsDiscount))
+	// DiscountRule 路由
+	n.app.AddPostHandler("bill", server.NewHandler[requests.CreateDiscountRuleReq, responses.DefaultResponse](
+		"createDiscountRule",
+		[]string{"DiscountRule"},
+		n.CreateDiscountRule,
+	))
+	n.app.AddPostHandler("bill", server.NewHandler[requests.UpdateDiscountRuleReq, responses.DefaultResponse](
+		"updateDiscountRule",
+		[]string{"DiscountRule"},
+		n.UpdateDiscountRule,
+	))
+	n.app.AddPostHandler("bill", server.NewHandler[requests.GetDiscountRuleListReq, responses.GetDiscountRuleListResp](
+		"getDiscountRuleList",
+		[]string{"DiscountRule"},
+		n.GetDiscountRuleList,
+	))
 
-	n.app.AddPostHandler("node/bill", server.NewHandler(
-		"listModelsDiscount",
-		[]string{"bill", "discount"},
-		n.ListModelsDiscount))
-
-	n.app.AddPostHandler("node/bill", server.NewHandler(
-		"updateModelsDiscount",
-		[]string{"bill", "discount"},
-		n.UpdateModelsDiscount))
-
-	n.app.AddPostHandler("node/bill", server.NewHandler(
-		"deleteModelsDiscount",
-		[]string{"bill", "discount"},
-		n.DeleteModelsDiscount))
-
-	n.app.AddPostHandler("node/bill", server.NewHandler(
-		"getModelDiscountByModelId",
-		[]string{"bill", "discount"},
-		n.GetModelDiscountByModelId))
+	// UserDiscount 路由
+	n.app.AddPostHandler("bill", server.NewHandler[requests.CreateUserDiscountReq, responses.DefaultResponse](
+		"createUserDiscount",
+		[]string{"UserDiscount"},
+		n.CreateUserDiscount,
+	))
+	n.app.AddPostHandler("bill", server.NewHandler[requests.UpdateUserDiscountReq, responses.DefaultResponse](
+		"updateUserDiscount",
+		[]string{"UserDiscount"},
+		n.UpdateUserDiscount,
+	))
+	n.app.AddPostHandler("bill", server.NewHandler[requests.GetUserDiscountListReq, responses.GetUserDiscountListResp](
+		"getUserDiscountList",
+		[]string{"UserDiscount"},
+		n.GetUserDiscountList,
+	))
 }
