@@ -59,22 +59,34 @@ type UpdateUserRebateConfigReq struct {
 }
 
 type GetUserRebateConfigReq struct {
-	UserId int64 `json:"user_id" validate:"required,gt=0"`
+	PageInfo   PageReq `json:"page_info"`
+	UserId     int64   `json:"user_id"`
+	TierStart  int64   `json:"tier_start"`
+	TierEnd    int64   `json:"tier_end"`
+	RebateRate int     `json:"rebate_rate"`
+	Status     *int    `json:"status"`
+	CreatedAt  int64   `json:"created_at"`
 }
 
 type GetUserRebateInfoReq struct {
-	PageInfo PageReq `json:"page_info"`
-	UserId   int64   `json:"user_id" validate:"required,gt=0"`
+	PageInfo      PageReq `json:"page_info"`
+	UserId        int64   `json:"user_id"`
+	Month         string  `json:"month"`
+	TotalConsumed int64   `json:"total_consumed"`
+	RebateRate    int     `json:"rebate_rate"`
 }
 
 // GetUserConsumeRecordReq 获取用户消费记录请求
 type GetUserConsumeRecordReq struct {
-	PageInfo   PageReq `json:"page_info"`
-	UserId     int64   `json:"user_id" validate:"gte=0"`
-	StartTime  int64   `json:"start_time"`
-	EndTime    int64   `json:"end_time"`
-	Model      string  `json:"model"`
-	ProviderId string  `json:"provider_id"`
+	PageInfo       PageReq `json:"page_info"`
+	UserId         int64   `json:"user_id" validate:"gte=0"`
+	StartTime      int64   `json:"start_time"`
+	EndTime        int64   `json:"end_time"`
+	Model          string  `json:"model"`
+	ProviderId     string  `json:"provider_id"`
+	ActualProvider string  `json:"actual_provider"`
+	CreatedAt      int64   `json:"created_at"`
+	TotalConsumed  int64   `json:"total_consumed"`
 }
 
 // UserConsumeDetailReq 获取用户消费详情请求
@@ -86,6 +98,12 @@ type UserConsumeDetailReq struct {
 
 // GetDayReportListReq 获取日报表列表请求
 type GetDayReportListReq struct {
-	UserId int64   `json:"user_id"`
-	Page   PageReq `json:"page"`
+	UserId       int64   `json:"user_id"`
+	UserName     string  `json:"user_name"`
+	ProviderName string  `json:"provider_name"`
+	ModelName    string  `json:"model_name"`
+	ConsumeType  string  `json:"consume_type"`
+	UpdatedAt    int64   `json:"updated_at"`
+	TotalCost    int64   `json:"total_cost"`
+	Page         PageReq `json:"page"`
 }

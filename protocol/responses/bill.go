@@ -52,6 +52,7 @@ type UserRebateData struct {
 
 type GetUserRebateConfigResp struct {
 	RebateInfoList []models.UserRebateConfig `json:"rebate_info_list"`
+	Total          int                       `json:"total"`
 }
 
 type GetUserRebateInfoResp struct {

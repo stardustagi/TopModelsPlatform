@@ -5,7 +5,6 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v4"
-	"github.com/stardustagi/TopLib/libs/databases"
 	"github.com/stardustagi/TopLib/protocol"
 	"github.com/stardustagi/TopModelsPlatform/constants"
 	"github.com/stardustagi/TopModelsPlatform/models"
@@ -226,17 +225,62 @@ func (u *UserHttpService) GetUserRebateConfigList(ctx echo.Context,
 	session := u.dao.NewSession()
 	defer session.Close()
 
+	// 默认分页
+	if req.PageInfo.Limit <= 0 {
+		req.PageInfo.Limit = 20
+	}
+	if req.PageInfo.Sort == "" {
+		req.PageInfo.Sort = "id desc"
+	}
+
+	// 构建查询条件
+	query := session.Native().NewSession()
+	defer query.Close()
+
+	// 可选条件：用户ID
+	if req.UserId > 0 {
+		query = query.Where("user_id = ?", req.UserId)
+	}
+
+	// 可选条件：阶梯起始值
+	if req.TierStart > 0 {
+		query = query.And("tier_start >= ?", req.TierStart)
+	}
+
+	// 可选条件：阶梯结束值
+	if req.TierEnd != 0 {
+		query = query.And("tier_end <= ?", req.TierEnd)
+	}
+
+	// 可选条件：返点比例
+	if req.RebateRate > 0 {
+		query = query.And("rebate_rate = ?", req.RebateRate)
+	}
+
+	// 可选条件：状态（使用指针区分未传值和0）
+	if req.Status != nil {
+		query = query.And("status = ?", *req.Status)
+	}
+
+	// 可选条件：创建时间
+	if req.CreatedAt > 0 {
+		query = query.And("created_at >= ?", req.CreatedAt)
+	}
+
+	// 使用 FindAndCount 查询数据和总数
 	var configs []models.UserRebateConfig
-	err := session.Native().
-		Where("user_id = ?", req.UserId).
-		Find(&configs)
+	total, err := query.
+		OrderBy(req.PageInfo.Sort).
+		Limit(req.PageInfo.Limit, req.PageInfo.Skip).
+		FindAndCount(&configs)
 	if err != nil {
 		u.logger.Error("查询用户返利配置失败", zap.Error(err))
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
 	}
 
 	resp.RebateInfoList = configs
-	// 转换为响应数据
+	resp.Total = int(total)
+
 	return protocol.Response(ctx, nil, resp)
 }
 
@@ -266,21 +310,36 @@ func (u *UserHttpService) GetUserRebateInfo(ctx echo.Context,
 		req.PageInfo.Sort = "id desc"
 	}
 
-	var records []models.UserRebateMonthly
-	var total int64
-	var err error
-
 	// 构建查询条件
-	queryModel := &models.UserRebateMonthly{}
+	query := session.Native().NewSession()
+	defer query.Close()
+
+	// 可选条件：用户ID
 	if req.UserId > 0 {
-		queryModel.UserId = req.UserId
+		query = query.Where("user_id = ?", req.UserId)
 	}
 
-	// 创建分页对象
-	pageable := databases.NewPageable(req.PageInfo.Skip, req.PageInfo.Limit, req.PageInfo.Sort)
+	// 可选条件：月份
+	if req.Month != "" {
+		query = query.And("month = ?", req.Month)
+	}
 
-	// 使用 FindAndCount 查询
-	total, err = session.FindAndCount(&records, pageable, queryModel)
+	// 可选条件：消费总额（大于等于）
+	if req.TotalConsumed > 0 {
+		query = query.And("total_consumed >= ?", req.TotalConsumed)
+	}
+
+	// 可选条件：返点比例
+	if req.RebateRate > 0 {
+		query = query.And("rebate_rate = ?", req.RebateRate)
+	}
+
+	// 使用 FindAndCount 查询数据和总数
+	var records []models.UserRebateMonthly
+	total, err := query.
+		OrderBy(req.PageInfo.Sort).
+		Limit(req.PageInfo.Limit, req.PageInfo.Skip).
+		FindAndCount(&records)
 	if err != nil {
 		u.logger.Error("查询用户返利记录失败", zap.Error(err))
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)

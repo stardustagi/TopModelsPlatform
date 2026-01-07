@@ -204,11 +204,34 @@ func (p *PlatfromHttpService) GetAlarm(ctx echo.Context,
 	query := session.Native().NewSession()
 	defer query.Close()
 
+	// 可选条件：用户ID
 	if req.UserId > 0 {
 		query = query.Where("user_id = ?", req.UserId)
 	}
+
+	// 可选条件：类型
 	if req.Type != "" {
 		query = query.And("type = ?", req.Type)
+	}
+
+	// 可选条件：最小值
+	if req.Min != nil {
+		query = query.And("min >= ?", *req.Min)
+	}
+
+	// 可选条件：最大值
+	if req.Max != nil {
+		query = query.And("max <= ?", *req.Max)
+	}
+
+	// 可选条件：创建时间
+	if req.CreatedAt > 0 {
+		query = query.And("created_at >= ?", req.CreatedAt)
+	}
+
+	// 可选条件：状态（使用指针区分未传值和0）
+	if req.Status != nil {
+		query = query.And("status = ?", *req.Status)
 	}
 
 	// 查询列表

@@ -1,8 +1,6 @@
 package node_report
 
 import (
-	"encoding/json"
-
 	"github.com/labstack/echo/v4"
 	"github.com/stardustagi/TopLib/protocol"
 	"github.com/stardustagi/TopModelsPlatform/constants"
@@ -35,49 +33,65 @@ func (rep *NodeHttpReportService) GetDayReportList(ctx echo.Context,
 		req.Page.Limit = 20
 	}
 	if req.Page.Sort == "" {
-		req.Page.Sort = "id desc"
+		req.Page.Sort = "pds.id desc"
 	}
 
-	// 调用存储过程 GetUserDayReportList
-	results, err := session.CallProcedure("GetUserDayReportList",
-		req.UserId,
-		req.Page.Skip,
-		req.Page.Limit,
-		req.Page.Sort,
-	)
+	// 构建查询条件
+	query := session.Native().
+		Table("provider_model_daily_summary").Alias("pds").
+		Join("LEFT", []string{"users", "u"}, "pds.user_id = u.id").
+		Join("LEFT", []string{"models_provider", "mp"}, "pds.actual_provider_id = mp.id").
+		Join("LEFT", []string{"models_info", "mi"}, "pds.model_id = mi.id").
+		Select("pds.id, pds.user_id, u.user_name, pds.actual_provider_id, mp.name as provider_name, pds.model_id, mi.name as model_name, pds.consume_type, pds.date, pds.total_consumed, pds.total_cost, pds.updated_at")
+
+	// 可选条件：用户ID
+	if req.UserId > 0 {
+		query = query.Where("pds.user_id = ?", req.UserId)
+	}
+
+	// 可选条件：用户名（模糊查询）
+	if req.UserName != "" {
+		query = query.And("u.user_name LIKE ?", "%"+req.UserName+"%")
+	}
+
+	// 可选条件：供应商名称（模糊查询）
+	if req.ProviderName != "" {
+		query = query.And("mp.name LIKE ?", "%"+req.ProviderName+"%")
+	}
+
+	// 可选条件：模型名称（模糊查询）
+	if req.ModelName != "" {
+		query = query.And("mi.name LIKE ?", "%"+req.ModelName+"%")
+	}
+
+	// 可选条件：消费类型
+	if req.ConsumeType != "" {
+		query = query.And("pds.consume_type = ?", req.ConsumeType)
+	}
+
+	// 可选条件：更新时间
+	if req.UpdatedAt > 0 {
+		query = query.And("pds.updated_at >= ?", req.UpdatedAt)
+	}
+
+	// 可选条件：总成本（大于等于）
+	if req.TotalCost > 0 {
+		query = query.And("pds.total_cost >= ?", req.TotalCost)
+	}
+
+	// 查询数据列表
+	var items []responses.DayReportItem
+	total, err := query.
+		OrderBy(req.Page.Sort).
+		Limit(req.Page.Limit, req.Page.Skip).
+		FindAndCount(&items)
 	if err != nil {
-		rep.logger.Error("调用存储过程失败", zap.Error(err))
+		rep.logger.Error("查询日报表列表失败", zap.Error(err))
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
 	}
 
-	// 解析结果
-	// 第一个结果集：数据列表
-	// 第二个结果集：总数
+	resp.Items = items
+	resp.Total = int(total)
 
-	if len(results) >= 1 {
-		// 解析数据列表
-		for _, row := range results[0] {
-			item := responses.DayReportItem{}
-			jsonBytes, err := json.Marshal(row)
-			if err != nil {
-				rep.logger.Error("Marshal 失败", zap.Error(err))
-				continue
-			}
-			err = json.Unmarshal(jsonBytes, &item)
-			if err != nil {
-				rep.logger.Error("Unmarshal 失败", zap.Error(err))
-				continue
-			}
-			resp.Items = append(resp.Items, item)
-		}
-	}
-
-	if len(results) >= 2 && len(results[1]) >= 1 {
-		if total, ok := results[1][0]["total"].(int); ok {
-			resp.Total = total
-		} else {
-			resp.Total = 0
-		}
-	}
 	return protocol.Response(ctx, nil, resp)
 }

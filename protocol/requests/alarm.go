@@ -21,8 +21,12 @@ type UpdateAlarmReq struct {
 
 // GetAlarmReq 获取告警配置请求
 type GetAlarmReq struct {
-	Id     int64   `json:"id"`
-	UserId int64   `json:"user_id"`
-	Type   string  `json:"type"`
-	Page   PageReq `json:"page"`
+	Id        int64   `json:"id"`
+	UserId    int64   `json:"user_id"`
+	Type      string  `json:"type"`
+	Min       *int    `json:"min"`
+	Max       *int    `json:"max"`
+	CreatedAt int64   `json:"created_at"`
+	Status    *int    `json:"status"`
+	Page      PageReq `json:"page"`
 }

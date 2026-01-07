@@ -67,6 +67,21 @@ func (u *UserHttpService) GetUserConsumeRecord(
 		query = query.And("actual_provider_id = ?", req.ProviderId)
 	}
 
+	// 可选条件：实际供应商
+	if req.ActualProvider != "" {
+		query = query.And("actual_provider = ?", req.ActualProvider)
+	}
+
+	// 可选条件：创建时间（精确匹配）
+	if req.CreatedAt > 0 {
+		query = query.And("created_at = ?", req.CreatedAt)
+	}
+
+	// 可选条件：消费金额（大于等于）
+	if req.TotalConsumed > 0 {
+		query = query.And("total_consumed >= ?", req.TotalConsumed)
+	}
+
 	// 使用 FindAndCount 查询数据和总数
 	var records []models.UserConsumeRecord
 	total, err := query.
