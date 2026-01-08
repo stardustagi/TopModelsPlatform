@@ -325,7 +325,7 @@ func (u *UserHttpService) GetUserRebateInfo(ctx echo.Context,
 	}
 
 	// 可选条件：消费总额（大于等于）
-	if req.TotalConsumed > 0 {
+	if req.TotalConsumed/constants.TokenRatio > 0 {
 		query = query.And("total_consumed >= ?", req.TotalConsumed)
 	}
 
@@ -351,7 +351,7 @@ func (u *UserHttpService) GetUserRebateInfo(ctx echo.Context,
 		data = append(data, responses.UserRebateData{
 			UserId:        r.UserId,
 			Month:         r.Month,
-			TotalConsumed: r.TotalConsumed,
+			TotalConsumed: r.TotalConsumed / constants.TokenRatio,
 			RebateAmount:  r.RebateAmount,
 			RebateUsed:    r.RebateUsed,
 			RebateRate:    r.RebateRate,

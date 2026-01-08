@@ -967,3 +967,1021 @@
 {"level":"info","time":"2025-12-29T16:38:11.203+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
 {"level":"info","time":"2025-12-29T16:38:11.203+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
 {"level":"info","time":"2025-12-29T16:38:11.203+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"debug","time":"2025-12-29T17:16:37.449+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T17:16:37.449+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.769+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.769+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.769+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"TopModelsPlatform/main.go:40","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"user_service/user_http.go:64","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"TopModelsPlatform/main.go:45","msg":"User service started","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"node_report/node_http_report.go:62","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"node_report/node_http_report.go:72","msg":"NodeHttpReportService started","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"TopModelsPlatform/main.go:50","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"TopModelsPlatform/main.go:55","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2025-12-29T22:44:41.770+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"backend/app.go:107","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2025-12-29T22:44:43.376+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/list"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2025-12-29T22:44:43.377+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2025-12-29T22:46:28.947+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/createUserRebateConfig' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"id\": 0,\n  \"rebate_rate\": 20,\n  \"status\": 1,\n  \"tier_end\": -1,\n  \"tier_start\": 10,\n  \"user_id\": 11\n}'"}
+{"level":"info","time":"2025-12-29T22:46:28.948+0800","caller":"user_service/user_rebate.go:28","msg":"创建用户返利配置","module":"UserHttpService","userId":11,"tierStart":10,"tierEnd":-1,"rebateRate":20}
+{"level":"info","time":"2025-12-29T22:46:28.952+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":1002,\"errmsg\":\"用户不存在\"}\n'"}
+{"level":"info","time":"2025-12-29T22:48:23.438+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/create' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\"username\":\"testuser11\",\"password\":\"TestPass123!\",\"email\":\"jxncyjq@163.com\"\n\"phone\": \"13838389438\"}'"}
+{"level":"error","time":"2025-12-29T22:48:23.438+0800","caller":"logs/logger.go:131","msg":"handler error: code=400, message=Syntax error: offset=78, error=invalid character '\"' after object key:value pair, internal=invalid character '\"' after object key:value pair"}
+{"level":"info","time":"2025-12-29T22:48:33.405+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/create' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"email\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\",\n  \"phone\": \"13838389438\",\n  \"username\": \"testuser11\"\n}'"}
+{"level":"error","time":"2025-12-29T22:48:33.406+0800","caller":"logs/logger.go:131","msg":"handler error: code=400, message=Key: 'CreateUserReq.UserName' Error:Field validation for 'UserName' failed on the 'required' tag"}
+{"level":"info","time":"2025-12-29T22:48:45.216+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/create' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"email\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\",\n  \"phone\": \"13838389438\",\n  \"user_name\": \"testuser11\"\n}'"}
+{"level":"info","time":"2025-12-29T22:48:45.216+0800","caller":"user_service/user_http.go:158","msg":"创建用户","module":"UserHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:48:45.256+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"id\":1,\"user_name\":\"testuser11\",\"email\":\"jxncyjq@163.com\",\"phone\":\"13838389438\",\"password\":\"\",\"real_name\":\"\",\"id_number\":\"\",\"active\":1,\"created_at\":1767019725,\"last_update\":0,\"company_id\":0,\"salt\":\"\",\"wallet_address_id\":0,\"spread_id\":0,\"is_realname_authentication\":0,\"last_login_ip\":\"\",\"is_ban\":0,\"deleted\":0,\"mail_code\":\"\",\"phone_code\":\"\",\"is_admin\":0,\"is_private\":0}}\n'"}
+{"level":"info","time":"2025-12-29T22:50:42.062+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/platform/login' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"mail\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\"\n}'"}
+{"level":"info","time":"2025-12-29T22:50:42.062+0800","caller":"platform_service/platform_http.go:90","msg":"Platform user login request","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"warn","time":"2025-12-29T22:50:42.065+0800","caller":"platform_service/platform_http.go:103","msg":"平台用户不存在","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:50:42.065+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":1002,\"errmsg\":\"用户不存在\"}\n'"}
+{"level":"info","time":"2025-12-29T22:50:54.764+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/platform/login' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"mail\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\"\n}'"}
+{"level":"info","time":"2025-12-29T22:50:54.764+0800","caller":"platform_service/platform_http.go:90","msg":"Platform user login request","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"warn","time":"2025-12-29T22:51:40.211+0800","caller":"platform_service/platform_http.go:103","msg":"平台用户不存在","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:51:40.211+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":1002,\"errmsg\":\"用户不存在\"}\n'"}
+{"level":"info","time":"2025-12-29T22:51:40.211+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/create' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"email\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\",\n  \"phone\": \"13838389438\",\n  \"user_name\": \"testuser11\"\n}'"}
+{"level":"info","time":"2025-12-29T22:51:40.211+0800","caller":"user_service/user_http.go:158","msg":"创建用户","module":"UserHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:51:40.214+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":1001,\"errmsg\":\"用户已存在\"}\n'"}
+{"level":"info","time":"2025-12-29T22:55:00.435+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/platform/register' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"mail\": \"jxncyjq@163.com\",\n  \"password\": \"123123\"\n}'"}
+{"level":"info","time":"2025-12-29T22:55:00.436+0800","caller":"platform_service/platform_http.go:164","msg":"Platform user register request","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:55:00.473+0800","caller":"platform_service/platform_http.go:202","msg":"平台用户注册成功","module":"UsersHttpService","email":"jxncyjq@163.com","userId":1}
+{"level":"info","time":"2025-12-29T22:55:00.473+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"email\":\"jxncyjq@163.com\",\"userId\":1}}\n'"}
+{"level":"info","time":"2025-12-29T22:55:26.090+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/platform/login' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"mail\": \"jxncyjq@163.com\",\n  \"password\": \"123123\"\n}'"}
+{"level":"info","time":"2025-12-29T22:55:26.090+0800","caller":"platform_service/platform_http.go:90","msg":"Platform user login request","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:55:29.405+0800","caller":"platform_service/platform_utils.go:33","msg":"生成平台用户Token","module":"UsersHttpService","userId":1,"email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:55:29.408+0800","caller":"platform_service/platform_utils.go:79","msg":"平台用户Token生成成功","module":"UsersHttpService","userId":1,"userTokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtTokenKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"debug","time":"2025-12-29T22:55:29.447+0800","caller":"redis/redis_view.go:76","msg":"Redis SET operation","module":"PlatformRedis","key":"platform:nodeUserToken:1","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6IjZJS1B5UzIwNjIyM1pPcm1BNjdPd24zcHJTNXFYYVVTIiwiaXNzIjoiYWRtaW4ifQ.UY1VtQqtljWxywuXay5iSRZqph_S9Oet9c4aa4SNrts","duration":"24h"}
+{"level":"info","time":"2025-12-29T22:55:29.447+0800","caller":"platform_service/platform_http.go:141","msg":"平台用户登录成功","module":"UsersHttpService","email":"jxncyjq@163.com","userId":1}
+{"level":"info","time":"2025-12-29T22:55:29.447+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"email\":\"jxncyjq@163.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6IjZJS1B5UzIwNjIyM1pPcm1BNjdPd24zcHJTNXFYYVVTIiwiaXNzIjoiYWRtaW4ifQ.UY1VtQqtljWxywuXay5iSRZqph_S9Oet9c4aa4SNrts\",\"userId\":1,\"userName\":\"\"}}\n'"}
+{"level":"info","time":"2025-12-29T22:55:58.937+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/platform/login' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"mail\": \"jxncyjq@163.com\",\n  \"password\": \"123123\"\n}'"}
+{"level":"info","time":"2025-12-29T22:55:58.937+0800","caller":"platform_service/platform_http.go:90","msg":"Platform user login request","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:56:02.351+0800","caller":"platform_service/platform_utils.go:33","msg":"生成平台用户Token","module":"UsersHttpService","userId":1,"email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:56:02.351+0800","caller":"platform_service/platform_utils.go:79","msg":"平台用户Token生成成功","module":"UsersHttpService","userId":1,"userTokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtTokenKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"debug","time":"2025-12-29T22:56:02.386+0800","caller":"redis/redis_view.go:76","msg":"Redis SET operation","module":"PlatformRedis","key":"platform:nodeUserToken:1","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ilcwak91ejRjYVFrTW4wVlZxZWswbDA0STRwNmtERFVsIiwiaXNzIjoiYWRtaW4ifQ.2PvQLp9lNQeXL_KTJce6koL1-xvztMjyuZb-dr51_nY","duration":"24h"}
+{"level":"info","time":"2025-12-29T22:56:02.386+0800","caller":"platform_service/platform_http.go:141","msg":"平台用户登录成功","module":"UsersHttpService","email":"jxncyjq@163.com","userId":1}
+{"level":"info","time":"2025-12-29T22:56:02.386+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"email\":\"jxncyjq@163.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ilcwak91ejRjYVFrTW4wVlZxZWswbDA0STRwNmtERFVsIiwiaXNzIjoiYWRtaW4ifQ.2PvQLp9lNQeXL_KTJce6koL1-xvztMjyuZb-dr51_nY\",\"userId\":1,\"userName\":\"\"}}\n'"}
+{"level":"info","time":"2025-12-29T22:56:25.464+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/platform/login' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"mail\": \"jxncyjq@163.com\",\n  \"password\": \"123123\"\n}'"}
+{"level":"info","time":"2025-12-29T22:56:25.464+0800","caller":"platform_service/platform_http.go:90","msg":"Platform user login request","module":"UsersHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:56:25.466+0800","caller":"platform_service/platform_utils.go:33","msg":"生成平台用户Token","module":"UsersHttpService","userId":1,"email":"jxncyjq@163.com"}
+{"level":"info","time":"2025-12-29T22:56:25.466+0800","caller":"platform_service/platform_utils.go:79","msg":"平台用户Token生成成功","module":"UsersHttpService","userId":1,"userTokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtTokenKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"debug","time":"2025-12-29T22:56:25.501+0800","caller":"redis/redis_view.go:76","msg":"Redis SET operation","module":"PlatformRedis","key":"platform:nodeUserToken:1","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ik9PTkg3NTRzNXY1UWVzRUtITXc4ZWljYW9UNFl4SDRyIiwiaXNzIjoiYWRtaW4ifQ.subXBI1BkMYrw3sP78J1rvr5ymaLpYeSlQUOGkgSdng","duration":"24h"}
+{"level":"info","time":"2025-12-29T22:56:25.502+0800","caller":"platform_service/platform_http.go:141","msg":"平台用户登录成功","module":"UsersHttpService","email":"jxncyjq@163.com","userId":1}
+{"level":"info","time":"2025-12-29T22:56:25.502+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"email\":\"jxncyjq@163.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJ0b2tlbiI6Ik9PTkg3NTRzNXY1UWVzRUtITXc4ZWljYW9UNFl4SDRyIiwiaXNzIjoiYWRtaW4ifQ.subXBI1BkMYrw3sP78J1rvr5ymaLpYeSlQUOGkgSdng\",\"userId\":1,\"userName\":\"\"}}\n'"}
+{"level":"info","time":"2025-12-29T22:57:10.991+0800","caller":"logs/logger.go:113","msg":"redis key is:","tokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"info","time":"2025-12-29T22:57:10.992+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/createUserRebateConfig' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"id\": 0,\n  \"rebate_rate\": 20,\n  \"status\": 1,\n  \"tier_end\": -1,\n  \"tier_start\": 10,\n  \"user_id\": 11\n}'"}
+{"level":"info","time":"2025-12-29T22:57:10.992+0800","caller":"user_service/user_rebate.go:28","msg":"创建用户返利配置","module":"UserHttpService","userId":11,"tierStart":10,"tierEnd":-1,"rebateRate":20}
+{"level":"info","time":"2025-12-29T22:57:10.995+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":1002,\"errmsg\":\"用户不存在\"}\n'"}
+{"level":"info","time":"2025-12-29T22:57:19.806+0800","caller":"logs/logger.go:113","msg":"redis key is:","tokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"info","time":"2025-12-29T22:57:19.807+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/createUserRebateConfig' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"id\": 0,\n  \"rebate_rate\": 20,\n  \"status\": 1,\n  \"tier_end\": -1,\n  \"tier_start\": 10,\n  \"user_id\": 1\n}'"}
+{"level":"info","time":"2025-12-29T22:57:19.807+0800","caller":"user_service/user_rebate.go:28","msg":"创建用户返利配置","module":"UserHttpService","userId":1,"tierStart":10,"tierEnd":-1,"rebateRate":20}
+{"level":"info","time":"2025-12-29T22:57:19.848+0800","caller":"user_service/user_rebate.go:103","msg":"创建用户返利配置成功","module":"UserHttpService","configId":1,"userId":1}
+{"level":"info","time":"2025-12-29T22:57:19.848+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"id\":1,\"message\":\"创建用户返利配置成功\"}}\n'"}
+{"level":"info","time":"2025-12-29T23:02:01.435+0800","caller":"logs/logger.go:113","msg":"redis key is:","tokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"info","time":"2025-12-29T23:02:01.436+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/getUserRebateInfo' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"page_info\": {\n    \"order\": \"id desc\",\n    \"page\": 1,\n    \"page_size\": 10\n  },\n  \"user_id\": 1\n}'"}
+{"level":"info","time":"2025-12-29T23:02:03.024+0800","caller":"user_service/user_rebate.go:217","msg":"获取用户返利信息","module":"UserHttpService","userId":1}
+{"level":"info","time":"2025-12-29T23:09:16.903+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"data\":null,\"total\":0}}\n'"}
+{"level":"info","time":"2025-12-29T23:09:16.994+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-29T23:09:16.994+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"debug","time":"2025-12-29T23:09:16.996+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:09:16.996+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.772+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:09:19.773+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"TopModelsPlatform/main.go:40","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"user_service/user_http.go:64","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"TopModelsPlatform/main.go:45","msg":"User service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"node_report/node_http_report.go:62","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"node_report/node_http_report.go:72","msg":"NodeHttpReportService started","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"TopModelsPlatform/main.go:50","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"TopModelsPlatform/main.go:55","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:09:19.774+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"backend/app.go:107","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2025-12-29T23:09:19.797+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/list"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2025-12-29T23:09:19.798+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"debug","time":"2025-12-29T23:11:24.561+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:11:24.561+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.478+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.478+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"TopModelsPlatform/main.go:40","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateConfigList","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2025-12-29T23:11:27.479+0800","caller":"user_service/user_http.go:64","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"TopModelsPlatform/main.go:45","msg":"User service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"node_report/node_http_report.go:62","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"node_report/node_http_report.go:72","msg":"NodeHttpReportService started","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"TopModelsPlatform/main.go:50","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"TopModelsPlatform/main.go:55","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2025-12-29T23:11:27.480+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"backend/app.go:107","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateConfigList"}
+{"level":"info","time":"2025-12-29T23:11:27.502+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/list"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2025-12-29T23:11:27.503+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2025-12-29T23:12:10.087+0800","caller":"logs/logger.go:113","msg":"redis key is:","tokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"info","time":"2025-12-29T23:12:10.089+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/getUserRebateConfig' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"user_id\": 1\n}'"}
+{"level":"error","time":"2025-12-29T23:12:10.089+0800","caller":"logs/logger.go:131","msg":"handler error: code=404, message=Not Found"}
+{"level":"info","time":"2025-12-29T23:12:27.814+0800","caller":"logs/logger.go:113","msg":"redis key is:","tokenKey":"TopModelNode:0.0.0.1:user:nodeUserToken:1","jwtKey":"TopModelNode:0.0.0.1:llm:models:nodeUserJwt:1"}
+{"level":"info","time":"2025-12-29T23:12:27.815+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/getUserRebateConfigList' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"user_id\": 1\n}'"}
+{"level":"info","time":"2025-12-29T23:12:27.815+0800","caller":"user_service/user_rebate.go:217","msg":"获取用户返利配置列表","module":"UserHttpService","userId":1}
+{"level":"info","time":"2025-12-29T23:12:27.817+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"rebate_info_list\":[{\"id\":1,\"user_id\":1,\"tier_start\":10,\"tier_end\":-1,\"rebate_rate\":20,\"status\":1,\"created_at\":1767020239,\"updated_at\":1767020239}]}}\n'"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"debug","time":"2025-12-29T23:22:34.426+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-29T23:22:34.426+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.846+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.846+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.846+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/alarm"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"TopModelsPlatform/main.go:41","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.847+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateConfigList","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeRecord","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeDetail","prefix":"user"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"user_service/user_http.go:64","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"TopModelsPlatform/main.go:47","msg":"User service started","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"node_report/node_http_report.go:62","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"node_report/node_http_report.go:72","msg":"NodeHttpReportService started","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"TopModelsPlatform/main.go:53","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"TopModelsPlatform/main.go:59","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:10.848+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"backend/app.go:107","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateConfigList"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/get"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/list"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/create"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/update"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeDetail"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeRecord"}
+{"level":"info","time":"2025-12-31T10:37:12.579+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2025-12-31T10:37:12.580+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2025-12-31T10:37:12.580+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2025-12-31T10:37:12.580+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2025-12-31T10:37:16.836+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-31T10:37:16.836+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"debug","time":"2025-12-31T10:37:16.837+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T10:37:16.837+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T11:12:12.290+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.290+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.290+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/alarm"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"TopModelsPlatform/main.go:41","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateConfigList","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeRecord","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeDetail","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"user_service/user_http.go:64","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"TopModelsPlatform/main.go:47","msg":"User service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"node_report/node_http_report.go:62","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"node_report/node_http_report.go:72","msg":"NodeHttpReportService started","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"TopModelsPlatform/main.go:53","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"TopModelsPlatform/main.go:59","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:12.291+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"backend/app.go:107","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateConfigList"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/update"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm/*"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/create"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeDetail"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2025-12-31T11:12:12.313+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/list"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeRecord"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2025-12-31T11:12:12.314+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/get"}
+{"level":"info","time":"2025-12-31T11:12:33.984+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-31T11:12:33.984+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-31T11:12:33.984+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"debug","time":"2025-12-31T11:12:33.985+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T11:12:33.985+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T11:13:02.171+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/alarm"}
+{"level":"info","time":"2025-12-31T11:13:02.172+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"alarm"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"TopModelsPlatform/main.go:41","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateConfigList","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeRecord","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeDetail","prefix":"user"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"user_service/user_http.go:64","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"TopModelsPlatform/main.go:47","msg":"User service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"node_report/node_http_report.go:62","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"node_report/node_http_report.go:72","msg":"NodeHttpReportService started","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"TopModelsPlatform/main.go:53","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"TopModelsPlatform/main.go:59","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2025-12-31T11:13:02.173+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"backend/app.go:108","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/update"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/get"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2025-12-31T11:13:02.625+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeDetail"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/list"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateConfigList"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeRecord"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/create"}
+{"level":"info","time":"2025-12-31T11:13:02.626+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2025-12-31T13:24:45.416+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2025-12-31T13:24:45.416+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"node_report/node_http_report.go:76","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"debug","time":"2025-12-31T13:24:45.417+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"node_report/node_http_report.go:91","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"user_service/user_http.go:68","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"user_service/user_http.go:70","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2025-12-31T13:24:45.417+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2026-01-05T20:08:50.040+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/alarm"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"alarm"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"alarm"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"alarm"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"TopModelsPlatform/main.go:41","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.041+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateConfigList","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeRecord","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeDetail","prefix":"user"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"user_service/user_http.go:65","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"TopModelsPlatform/main.go:47","msg":"User service started","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/report"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getDayReportList","prefix":"report"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"node_report/node_http_report.go:59","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"TopModelsPlatform/main.go:53","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"listModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"deleteModelsDiscount","prefix":"node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelDiscountByModelId","prefix":"node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"TopModelsPlatform/main.go:59","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2026-01-05T20:08:50.042+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"backend/app.go:109","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateConfigList"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/report/getDayReportList"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/deleteModelsDiscount"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeDetail"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/report/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelDiscountByModelId"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/create"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill/*"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/listModelsDiscount"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/updateModelsDiscount"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/bill"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/update"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/get"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/list"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeRecord"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/report"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/createModelsDiscount"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/bill/getModelsDiscount"}
+{"level":"info","time":"2026-01-05T20:08:50.494+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2026-01-05T20:09:06.240+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/create' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"email\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\",\n  \"phone\": \"13838389438\",\n  \"user_name\": \"testuser11\"\n}'"}
+{"level":"info","time":"2026-01-05T20:09:06.241+0800","caller":"user_service/user_http.go:147","msg":"创建用户","module":"UserHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2026-01-05T20:09:06.245+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":1001,\"errmsg\":\"用户已存在\"}\n'"}
+{"level":"info","time":"2026-01-05T20:09:26.722+0800","caller":"logs/logger.go:113","msg":"request :'POST /api/user/create' 200 127.0.0.1 '-' 'IntelliJ HTTP Client/GoLand 2025.2.6' 127.0.0.1:8082 '{\n  \"email\": \"jxncyjq@163.com\",\n  \"password\": \"TestPass123!\",\n  \"phone\": \"13838389438\",\n  \"user_name\": \"testuser11\"\n}'"}
+{"level":"info","time":"2026-01-05T20:09:26.722+0800","caller":"user_service/user_http.go:147","msg":"创建用户","module":"UserHttpService","email":"jxncyjq@163.com"}
+{"level":"info","time":"2026-01-05T20:09:26.765+0800","caller":"logs/logger.go:107","msg":"response: '{\"errcode\":0,\"errmsg\":\"操作成功!\",\"data\":{\"id\":2,\"user_name\":\"testuser11\",\"email\":\"jxncyjq@163.com\",\"phone\":\"13838389438\",\"password\":\"\",\"real_name\":\"\",\"id_number\":\"\",\"active\":1,\"created_at\":1767614966,\"last_update\":0,\"company_id\":0,\"salt\":\"\",\"wallet_address_id\":0,\"spread_id\":0,\"is_realname_authentication\":0,\"last_login_ip\":\"\",\"is_ban\":0,\"deleted\":0,\"mail_code\":\"\",\"phone_code\":\"\",\"is_admin\":0,\"is_private\":0}}\n'"}
+{"level":"info","time":"2026-01-06T18:47:01.979+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2026-01-06T18:47:01.980+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"debug","time":"2026-01-06T18:47:01.981+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"node_report/node_http_report.go:64","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"node_report/node_http_report.go:66","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"user_service/user_http.go:69","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"user_service/user_http.go:71","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2026-01-06T18:47:01.981+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}
+{"level":"info","time":"2026-01-07T20:43:54.251+0800","caller":"TopModelsPlatform/main.go:29","msg":"Init logs","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.251+0800","caller":"TopModelsPlatform/main.go:31","msg":"Init mysql","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"TopModelsPlatform/main.go:33","msg":"Init redis","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:211","msg":"http native handler registered:","module":"httpServer","method":"GET","path":"api/swagger/*"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/platform"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"login","prefix":"platform"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"platform"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/node"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"register","prefix":"node"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/model"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"model"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"model"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"model"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"model"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"model"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"graphCode","prefix":"platform"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"phoneCode","prefix":"platform"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/alarm"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"alarm"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"alarm"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"alarm"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"platform_service/platform_http.go:66","msg":"Starting UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2026-01-07T20:43:54.252+0800","caller":"TopModelsPlatform/main.go:41","msg":"Platform service started","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"list","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:189","msg":"http handler registered to group:","module":"httpServer","path":"get","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"create","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"update","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"delete","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"setActive","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"adminAddUserByName","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"userAdminPayment","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserAdminPaymentList","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserRebateConfig","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateConfigList","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserRebateInfo","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getModelsProviderInfoListResp","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeRecord","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserConsumeDetail","prefix":"user"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"user_service/user_http.go:65","msg":"Starting UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"TopModelsPlatform/main.go:47","msg":"User service started","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/report"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getDayReportList","prefix":"report"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getDayReportSummary","prefix":"report"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getReportDetailList","prefix":"report"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"node_report/node_http_report.go:59","msg":"Starting NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"TopModelsPlatform/main.go:53","msg":"Node report service started","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:179","msg":"http group registered:","module":"httpServer","path":"api/bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createDiscountRule","prefix":"bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateDiscountRule","prefix":"bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getDiscountRuleList","prefix":"bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"createUserDiscount","prefix":"bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"updateUserDiscount","prefix":"bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"server/server_http.go:202","msg":"http handler registered to group:","module":"httpServer","path":"getUserDiscountList","prefix":"bill"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"node_bill/node_bill_http.go:58","msg":"Starting NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"TopModelsPlatform/main.go:59","msg":"Node bill service started","module":"main"}
+{"level":"info","time":"2026-01-07T20:43:54.253+0800","caller":"backend/app.go:94","msg":"Syncing database schema...","module":"HttpBackend"}
+{"level":"info","time":"2026-01-07T20:43:54.673+0800","caller":"backend/app.go:110","msg":"Database schema synced successfully","module":"HttpBackend"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"backend/app.go:69","msg":"Stopping HttpBackend","module":"HttpBackend"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/ws_client_manager.go:53","msg":"Starting client manager","module":"clientManager"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:79","msg":"http server listened on:","module":"httpServer","addr":"127.0.0.1:8082"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/bill"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/update"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node/*"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/node/register"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/setActive"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/createUserRebateConfig"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/report/getReportDetailList"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/bill/*"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/bill/updateDiscountRule"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/alarm/*"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/get"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserAdminPaymentList"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeRecord"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/bill/getDiscountRuleList"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/bill/updateUserDiscount"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/swagger/*"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/node"}
+{"level":"info","time":"2026-01-07T20:43:54.674+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/model/*"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/phoneCode"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/adminAddUserByName"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/userAdminPayment"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateInfo"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/graphCode"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/update"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getModelsProviderInfoListResp"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserConsumeDetail"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/report"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/report/*"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/bill/createUserDiscount"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/update"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/getUserRebateConfigList"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/bill/createDiscountRule"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/bill/getUserDiscountList"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/list"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/create"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/platform/*"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/login"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/create"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/delete"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/report/getDayReportList"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/alarm/create"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"echo_route_not_found","path":"/api/user/*"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"GET","path":"/api/user/get"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/platform/register"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/get"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/delete"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/user/updateUserRebateConfig"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/report/getDayReportSummary"}
+{"level":"info","time":"2026-01-07T20:43:54.675+0800","caller":"server/server_http.go:82","msg":"http route registered:","module":"httpServer","method":"POST","path":"/api/model/list"}
+{"level":"info","time":"2026-01-07T20:44:29.145+0800","caller":"server/server_http.go:128","msg":"received shutdown signal:","module":"httpServer","signal":"interrupt"}
+{"level":"info","time":"2026-01-07T20:44:29.145+0800","caller":"server/server_http.go:134","msg":"shutting down server...","module":"httpServer"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"server/server_http.go:142","msg":"server exited gracefully","module":"httpServer"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"TopModelsPlatform/main.go:64","msg":"Services stopped","module":"main"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"node_bill/node_bill_http.go:62","msg":"Stopping NodeHttpBillService...","module":"NodeHttpBillService"}
+{"level":"debug","time":"2026-01-07T20:44:29.146+0800","caller":"server/ws_client_manager.go:76","msg":"Stopping client manager","module":"clientManager"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"node_bill/node_bill_http.go:64","msg":"NodeHttpBillService stopped.","module":"NodeHttpBillService"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"server/ws_client_manager.go:133","msg":"All clients have been kicked","module":"clientManager"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"node_report/node_http_report.go:64","msg":"Stopping NodeHttpReportService...","module":"NodeHttpReportService"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"node_report/node_http_report.go:66","msg":"NodeHttpReportService stopped.","module":"NodeHttpReportService"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"user_service/user_http.go:69","msg":"Stopping UserHttpService...","module":"UserHttpService"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"user_service/user_http.go:71","msg":"UserHttpService stopped.","module":"UserHttpService"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"platform_service/platform_http.go:70","msg":"Stopping UsersHttpService...","module":"UsersHttpService"}
+{"level":"info","time":"2026-01-07T20:44:29.146+0800","caller":"platform_service/platform_http.go:72","msg":"UsersHttpService stopped.","module":"UsersHttpService"}

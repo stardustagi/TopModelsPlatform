@@ -65,25 +65,3 @@ func (rep *NodeHttpReportService) Stop() {
 	rep.cancelCtx()
 	rep.logger.Info("NodeHttpReportService stopped.")
 }
-
-func (rep *NodeHttpReportService) initialization() {
-	rep.app.AddGroup("report", server.Request(), backend.PlatformUserAccess())
-
-	rep.app.AddPostHandler("report", server.NewHandler(
-		"getDayReportList",
-		[]string{"Report"},
-		rep.GetDayReportList,
-	))
-
-	rep.app.AddPostHandler("report", server.NewHandler(
-		"getDayReportSummary",
-		[]string{"Report"},
-		rep.GetDayReportSummary,
-	))
-
-	rep.app.AddPostHandler("report", server.NewHandler(
-		"getReportDetailList",
-		[]string{"Report"},
-		rep.GetReportDetailList,
-	))
-}
