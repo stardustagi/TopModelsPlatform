@@ -227,7 +227,7 @@ func (u *UserHttpService) GetUserRebateConfigList(ctx echo.Context,
 
 	// 默认分页
 	if req.PageInfo.Limit <= 0 {
-		req.PageInfo.Limit = 20
+		req.PageInfo.Limit = constants.DefaultPageSize
 	}
 	if req.PageInfo.Sort == "" {
 		req.PageInfo.Sort = "id desc"

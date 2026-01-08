@@ -40,15 +40,29 @@ func (n *NodeHttpBillService) CreateDiscountRule(ctx echo.Context,
 	}
 
 	rule := &models.DiscountRule{
-		Name:         req.Name,
-		Description:  req.Description,
-		DiscountRate: req.DiscountRate,
-		Status:       status,
-		CreatedAt:    now,
-		UpdatedAt:    now,
+		Name:        req.Name,
+		Description: req.Description,
+		//DiscountRate: req.DiscountRate,
+		Status: status,
+		//CreatedAt:    now,
+		//UpdatedAt:    now,
 	}
 
-	_, err := session.InsertOne(rule)
+	ok, err := session.FindOne(rule)
+	if err != nil {
+		n.logger.Error("折扣查询错误", zap.Error(err))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+	if ok {
+		err = fmt.Errorf("折扣已经存在,%s,%s", rule.Name, rule.Description)
+		n.logger.Error("折扣添加错误", zap.Error(err))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
+
+	rule.CreatedAt = now
+	rule.UpdatedAt = now
+	rule.DiscountRate = req.DiscountRate
+	_, err = session.InsertOne(rule)
 	if err != nil {
 		n.logger.Error("创建折扣规则失败", zap.Error(err))
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
@@ -113,6 +127,20 @@ func (n *NodeHttpBillService) UpdateDiscountRule(ctx echo.Context,
 		n.logger.Error("更新折扣规则失败", zap.Error(err))
 		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
 	}
+	// 新增：同步更新使用该规则的用户折扣的折扣率
+	now := time.Now().Unix()
+	userDiscountUpdate := &models.UserDiscount{
+		DiscountRate: existingRule.DiscountRate,
+		UpdatedAt:    now,
+	}
+	_, err = session.Native().
+		Where("rule_id = ?", req.Id).
+		Cols("discount_rate", "updated_at").
+		Update(userDiscountUpdate)
+	if err != nil {
+		n.logger.Error("同步更新用户折扣失败", zap.Error(err))
+		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+	}
 
 	n.logger.Info("更新折扣规则成功", zap.Int64("id", req.Id))
 
@@ -140,7 +168,7 @@ func (n *NodeHttpBillService) GetDiscountRuleList(ctx echo.Context,
 
 	// 默认分页
 	if req.PageInfo.Limit <= 0 {
-		req.PageInfo.Limit = 20
+		req.PageInfo.Limit = constants.DefaultPageSize
 	}
 	if req.PageInfo.Sort == "" {
 		req.PageInfo.Sort = "id desc"

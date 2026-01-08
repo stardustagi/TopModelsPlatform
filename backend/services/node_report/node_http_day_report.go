@@ -34,7 +34,7 @@ func (rep *NodeHttpReportService) GetDayReportList(ctx echo.Context,
 
 	// 默认分页
 	if req.Page.Limit <= 0 {
-		req.Page.Limit = 20
+		req.Page.Limit = constants.DefaultPageSize
 	}
 	if req.Page.Sort == "" {
 		req.Page.Sort = "pds.id desc"
@@ -166,7 +166,7 @@ func (rep *NodeHttpReportService) GetReportDetailList(ctx echo.Context,
 
 	// 默认分页
 	if req.PageInfo.Limit <= 0 {
-		req.PageInfo.Limit = 20
+		req.PageInfo.Limit = constants.DefaultPageSize
 	}
 	if req.PageInfo.Sort == "" {
 		req.PageInfo.Sort = "sr.id desc"

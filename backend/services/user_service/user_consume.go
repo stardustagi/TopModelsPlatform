@@ -34,7 +34,7 @@ func (u *UserHttpService) GetUserConsumeRecord(
 
 	// 默认分页
 	if req.PageInfo.Limit <= 0 {
-		req.PageInfo.Limit = 20
+		req.PageInfo.Limit = constants.DefaultPageSize
 	}
 	if req.PageInfo.Sort == "" {
 		req.PageInfo.Sort = "created_at desc"

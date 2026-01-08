@@ -20,6 +20,7 @@ var (
 	UserGraphCodeExpire  string = "300s" // 图形验证码过期时间（秒）
 	UserPhoneCodeExpire  string = "300s" // 手机验证码过期时间（秒）
 	PlatformPrefix       string = fmt.Sprintf("%s:platform", RedisPrefix)
+	DefaultPageSize      int    = 1000
 )
 
 var (
