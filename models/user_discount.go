@@ -8,9 +8,9 @@ import (
 
 type UserDiscount struct {
 	Id           int64 `json:"id" xorm:"'id' pk autoincr BIGINT(20)"`
-	UserId       int64 `json:"user_id" xorm:"'user_id' not null default 0 BIGINT(20)"`
-	ModelId      int   `json:"model_id" xorm:"'model_id' not null default 0 INT(10)"`
-	RuleId       int64 `json:"rule_id" xorm:"'rule_id' not null default 0 BIGINT(20)"`
+	UserId       int64 `json:"user_id" xorm:"'user_id' not null default 0 BIGINT(20) unique(uk_user_model_rule)" `
+	ModelId      int   `json:"model_id" xorm:"'model_id' not null default 0 INT(10) unique(uk_user_model_rule)"`
+	RuleId       int64 `json:"rule_id" xorm:"'rule_id' not null default 0 BIGINT(20) unique(uk_user_model_rule)"`
 	DiscountRate int   `json:"discount_rate" xorm:"'discount_rate' not null default 0 INT(10)"`
 	CreatedAt    int64 `json:"created_at" xorm:"'created_at' not null default 0 BIGINT(20)"`
 	UpdatedAt    int64 `json:"updated_at" xorm:"'updated_at' not null default 0 BIGINT(20)"`
