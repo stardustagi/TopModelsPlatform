@@ -51,6 +51,7 @@ func (p *PlatfromHttpService) CreateAlarm(ctx echo.Context,
 		UserId:     *req.UserId,
 		CreatedAt:  now,
 		LastupDate: now,
+		AlarmType:  req.AlarmType,
 	}
 
 	_, err := session.InsertOne(alarmConfig)
@@ -126,12 +127,15 @@ func (p *PlatfromHttpService) UpdateAlarm(ctx echo.Context,
 	} else {
 		existingConfig.UserId = 0
 	}
+	if req.AlarmType != "" {
+		existingConfig.AlarmType = req.AlarmType
+	}
 	existingConfig.LastupDate = time.Now().Unix()
 
 	// 使用 Cols 强制更新包含零值的字段
 	_, err = session.Native().
 		ID(req.Id).
-		Cols("type", "min", "max", "status", "user_id", "lastup_date").
+		Cols("type", "min", "max", "status", "user_id", "lastup_date", "alarm_type").
 		Update(existingConfig)
 	if err != nil {
 		p.logger.Error("更新告警配置失败", zap.Error(err))
