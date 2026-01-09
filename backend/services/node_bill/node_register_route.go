@@ -44,4 +44,11 @@ func (n *NodeHttpBillService) initialization() {
 		[]string{"UserDiscount"},
 		n.GetUserDiscountList,
 	))
+
+	// 折扣日志
+	n.app.AddPostHandler("bill", server.NewHandler[requests.GetDiscountLogListReq, responses.GetDiscountLogListResp](
+		"getDiscountLogList",
+		[]string{"DiscountLogList"},
+		n.GetDiscountLogList,
+	))
 }

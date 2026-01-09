@@ -17,3 +17,9 @@ type GetUserDiscountListResp struct {
 	List  []models.UserDiscount `json:"list"`
 	Total int                   `json:"total"`
 }
+
+// 折扣日志
+type GetDiscountLogListResp struct {
+	List  []models.UserConsumeRecord `json:"list"`
+	Total int64                      `json:"total"`
+}

@@ -52,3 +52,11 @@ type GetUserDiscountListReq struct {
 	DiscountRate *int    `json:"discount_rate"`
 	CreatedAt    int64   `json:"created_at"`
 }
+
+// 折扣日志
+type GetDiscountLogListReq struct {
+	PageInfo  PageReq `json:"page_info"`  // 页码，从 1 开始
+	UserId    int64   `json:"user_id"`    // 可选
+	StartTime int64   `json:"start_time"` // 可选，unix 秒
+	EndTime   int64   `json:"end_time"`   // 可选，unix 秒
+}

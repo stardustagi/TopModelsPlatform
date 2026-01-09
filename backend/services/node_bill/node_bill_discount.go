@@ -394,3 +394,71 @@ func (n *NodeHttpBillService) GetUserDiscountList(ctx echo.Context,
 
 	return protocol.Response(ctx, nil, resp)
 }
+
+// 折扣日志
+func (n *NodeHttpBillService) GetDiscountLogList(
+	ctx echo.Context,
+	req requests.GetDiscountLogListReq,
+	resp responses.GetDiscountLogListResp,
+) error {
+
+	n.logger.Info("获取折扣日志列表",
+		zap.Int64("userId", req.UserId),
+		zap.Int64("startTime", req.StartTime),
+		zap.Int64("endTime", req.EndTime),
+	)
+
+	session := n.dao.NewSession()
+	defer session.Close()
+
+	// ===== 分页默认值 =====
+	if req.PageInfo.Limit <= 0 {
+		req.PageInfo.Limit = 20
+	}
+	if req.PageInfo.Sort == "" {
+		req.PageInfo.Sort = "id desc"
+	}
+
+	// ===== 构建查询 =====
+	query := session.Native().NewSession()
+	defer query.Close()
+
+	// 固定条件：有折扣
+	query = query.Where("discount_amount > 0")
+
+	// 可选条件：用户ID
+	if req.UserId > 0 {
+		query = query.And("user_id = ?", req.UserId)
+	}
+
+	// 可选条件：开始时间
+	if req.StartTime > 0 {
+		query = query.And("created_at >= ?", req.StartTime)
+	}
+
+	// 可选条件：结束时间
+	if req.EndTime > 0 {
+		query = query.And("created_at <= ?", req.EndTime)
+	}
+
+	// ===== 查询数据 =====
+	var list []models.UserConsumeRecord
+	total, err := query.
+		OrderBy(req.PageInfo.Sort).
+		Limit(req.PageInfo.Limit, req.PageInfo.Skip).
+		FindAndCount(&list)
+
+	if err != nil {
+		n.logger.Error("查询折扣日志失败", zap.Error(err))
+		return protocol.Response(
+			ctx,
+			constants.ErrInternalServer.AppendErrors(err),
+			nil,
+		)
+	}
+
+	resp.List = list
+	resp.Total = total
+
+	return protocol.Response(ctx, nil, resp)
+}
