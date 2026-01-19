@@ -280,45 +280,46 @@ func (n *NodeHttpBillService) CreateUserDiscount(ctx echo.Context,
 // @Router /node/bill/updateUserDiscount [post]
 func (n *NodeHttpBillService) UpdateUserDiscount(ctx echo.Context,
 	req requests.UpdateUserDiscountReq, resp responses.DefaultResponse) error {
-	n.logger.Info("更新用户折扣", zap.Int64("id", req.Id))
+	n.logger.Info("更新用户折扣", zap.Any("id", req))
 
 	session := n.dao.NewSession()
 	defer session.Close()
 
-	// 查询原有配置是否存在
-	existingDiscount := &models.UserDiscount{Id: req.Id}
-	ok, err := session.FindOne(existingDiscount)
-	if err != nil {
-		n.logger.Error("查询用户折扣失败", zap.Error(err))
-		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
-	}
-	if !ok {
-		return protocol.Response(ctx, constants.ErrNotDataSet, nil)
-	}
+	for _, dc := range req.Data {
+		// 查询原有配置是否存在
+		existingDiscount := &models.UserDiscount{Id: dc.Id}
+		ok, err := session.FindOne(existingDiscount)
+		if err != nil {
+			n.logger.Error("查询用户折扣失败", zap.Error(err))
+			return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+		}
+		if !ok {
+			return protocol.Response(ctx, constants.ErrNotDataSet, nil)
+		}
 
-	// 更新字段
-	if req.RuleId > 0 {
-		existingDiscount.RuleId = req.RuleId
-	} else {
-		n.logger.Error("更新用户折扣失败，rule_id 必须大于0")
-		return protocol.Response(ctx, constants.ErrInvalidParams.AppendErrors(fmt.Errorf("rule_id 必须大于0")), nil)
-	}
-	existingDiscount.UpdatedAt = time.Now().Unix()
+		// 更新字段
+		if dc.RuleId > 0 {
+			existingDiscount.RuleId = dc.RuleId
+		} else {
+			n.logger.Error("更新用户折扣失败，rule_id 必须大于0")
+			return protocol.Response(ctx, constants.ErrInvalidParams.AppendErrors(fmt.Errorf("rule_id 必须大于0")), nil)
+		}
+		existingDiscount.UpdatedAt = time.Now().Unix()
 
-	// 使用 Cols 强制更新包含零值的字段
-	_, err = session.Native().
-		ID(req.Id).
-		Cols("user_id", "model_id", "rule_id", "discount_rate", "updated_at").
-		Update(existingDiscount)
-	if err != nil {
-		n.logger.Error("更新用户折扣失败", zap.Error(err))
-		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
-	}
+		// 使用 Cols 强制更新包含零值的字段
+		_, err = session.Native().
+			ID(dc.Id).
+			Cols("user_id", "model_id", "rule_id", "discount_rate", "updated_at").
+			Update(existingDiscount)
+		if err != nil {
+			n.logger.Error("更新用户折扣失败", zap.Error(err))
+			return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+		}
 
-	n.logger.Info("更新用户折扣成功", zap.Int64("id", req.Id))
+		n.logger.Info("更新用户折扣成功", zap.Int64("id", dc.Id))
+	}
 
 	return protocol.Response(ctx, nil, map[string]interface{}{
-		"id":      req.Id,
 		"message": "更新用户折扣成功",
 	})
 }

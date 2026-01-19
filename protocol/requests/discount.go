@@ -37,10 +37,14 @@ type CreateUserDiscountReq struct {
 	RuleId  int64 `json:"rule_id"`
 }
 
-// UpdateUserDiscountReq 更新用户折扣请求
-type UpdateUserDiscountReq struct {
+type DiscountContent struct {
 	Id     int64 `json:"id" validate:"required,gt=0"`
 	RuleId int64 `json:"rule_id"`
+}
+
+// UpdateUserDiscountReq 更新用户折扣请求
+type UpdateUserDiscountReq struct {
+	Data []DiscountContent `json:"data" validate:"required,dive"`
 }
 
 // GetUserDiscountListReq 获取用户折扣列表请求
