@@ -32,9 +32,9 @@ type GetDiscountRuleListReq struct {
 
 // CreateUserDiscountReq 创建用户折扣请求
 type CreateUserDiscountReq struct {
-	UserId  int64 `json:"user_id" validate:"required,gt=0"`
-	ModelId int   `json:"model_id" validate:"required,gt=0"`
-	RuleId  int64 `json:"rule_id"`
+	UserId   int64 `json:"user_id" validate:"required,gt=0"`
+	ModelIds []int `json:"model_ids" validate:"required"`
+	RuleId   int64 `json:"rule_id"`
 }
 
 type DiscountContent struct {

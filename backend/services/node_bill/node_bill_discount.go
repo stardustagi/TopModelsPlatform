@@ -246,25 +246,26 @@ func (n *NodeHttpBillService) CreateUserDiscount(ctx echo.Context,
 	}
 	now := time.Now().Unix()
 
-	discount := &models.UserDiscount{
-		UserId:       req.UserId,
-		ModelId:      req.ModelId,
-		RuleId:       req.RuleId,
-		DiscountRate: ruleInfo.DiscountRate,
-		CreatedAt:    now,
-		UpdatedAt:    now,
-	}
+	for _, dc := range req.ModelIds {
+		discount := &models.UserDiscount{
+			UserId:       req.UserId,
+			ModelId:      dc,
+			RuleId:       req.RuleId,
+			DiscountRate: ruleInfo.DiscountRate,
+			CreatedAt:    now,
+			UpdatedAt:    now,
+		}
 
-	_, err = session.InsertOne(discount)
-	if err != nil {
-		n.logger.Error("创建用户折扣失败", zap.Error(err))
-		return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+		_, err = session.InsertOne(discount)
+		if err != nil {
+			n.logger.Error("创建用户折扣失败", zap.Error(err))
+			return protocol.Response(ctx, constants.ErrInternalServer.AppendErrors(err), nil)
+		}
+		n.logger.Info("创建用户折扣成功", zap.Int64("id", discount.Id))
 	}
-
-	n.logger.Info("创建用户折扣成功", zap.Int64("id", discount.Id))
 
 	return protocol.Response(ctx, nil, map[string]interface{}{
-		"id":      discount.Id,
+		//"id":      discount.Id,
 		"message": "创建用户折扣成功",
 	})
 }
